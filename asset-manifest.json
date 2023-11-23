@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kennan-portfolio/static/css/main.342fa262.css",
+    "main.js": "/kennan-portfolio/static/js/main.d0cbe673.js",
+    "static/js/787.7da95b79.chunk.js": "/kennan-portfolio/static/js/787.7da95b79.chunk.js",
+    "index.html": "/kennan-portfolio/index.html",
+    "main.342fa262.css.map": "/kennan-portfolio/static/css/main.342fa262.css.map",
+    "main.d0cbe673.js.map": "/kennan-portfolio/static/js/main.d0cbe673.js.map",
+    "787.7da95b79.chunk.js.map": "/kennan-portfolio/static/js/787.7da95b79.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.342fa262.css",
+    "static/js/main.d0cbe673.js"
+  ]
+}
