@@ -1,0 +1,24 @@
+.App-Background {
+  background-color: #e5e5d2;
+  height: 100vh;
+  width: 100vw;
+  padding: 30px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.Center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Background-Outline {
+  background-color: transparent;
+  border: 2px solid black;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding: 30px;
+  box-sizing: border-box;
+}
