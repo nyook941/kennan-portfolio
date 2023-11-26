@@ -1,0 +1,34 @@
+.Nav-Panel-Container button {
+  border-width: 0px;
+  background-color: transparent;
+  font-size: 24px;
+  display: flex;
+  flex-direction: row;
+  font-weight: 200;
+  width: 100%;
+  align-items: center;
+  transition: font-weight 0.3s ease;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.Nav-Panel-Container {
+  background-color: white;
+  padding: 20px;
+}
+
+.Indicator {
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  margin-right: 10px;
+  transition: width 0.3s ease;
+}
+
+.Nav-Panel-Container button:hover {
+  font-weight: 700;
+}
+
+.Nav-Panel-Container button:hover .Indicator {
+  width: 20px;
+}

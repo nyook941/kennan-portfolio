@@ -1,0 +1,9 @@
+.Date-Container {
+  display: flex;
+  align-items: flex-end;
+  color: white;
+  font-size: 20px;
+  margin-top: 60px;
+  flex-direction: column;
+  margin-bottom: 10px;
+}

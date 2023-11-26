@@ -1,0 +1,23 @@
+.Side-Panel {
+  background-color: white;
+  height: 100vh;
+  width: 75px;
+  box-shadow: 10px 0px 10px -8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Socials-Icon {
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.Socials-Icon:hover {
+  color: #6e85ff;
+  transform: scale(1.2);
+}

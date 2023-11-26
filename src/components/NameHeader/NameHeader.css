@@ -1,4 +1,24 @@
-.Name-Header-Container h1 {
+.Left-Content-Margin {
+  margin-bottom: 60px;
+}
+
+.Text-Absolute-Container {
+  flex-direction: column;
+}
+
+.Text-Absolute-Container h1 {
   font-size: 32px;
+  background-color: white;
+  padding: 30px;
+  font-weight: 400;
+}
+
+.Text-Absolute-Container h2 {
+  font-size: 16px;
   font-weight: 300;
+  line-height: 2;
+  background-color: white;
+  color: black;
+  font-weight: 400;
+  padding: 10px;
 }
