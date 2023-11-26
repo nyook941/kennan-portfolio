@@ -53,3 +53,7 @@
   background-color: white;
   margin-top: 60px;
 }
+
+.Min {
+  min-height: 60px;
+}

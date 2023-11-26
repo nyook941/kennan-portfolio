@@ -32,3 +32,11 @@
 .Nav-Panel-Container button:hover .Indicator {
   width: 20px;
 }
+
+.Nav-Panel-Container button.active {
+  font-weight: 700;
+}
+
+.Nav-Panel-Container button.active .Indicator {
+  width: 20px;
+}

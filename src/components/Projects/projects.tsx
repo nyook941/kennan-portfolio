@@ -12,7 +12,7 @@ export default function Project({
 }) {
   return (
     <div className="Text-Container Right-Content-Padding Project-Container">
-      <img src={image}></img>
+      {/* <img src={"./background"} /> */}
       <div>
         <h1>{name}</h1>
         <h2>{description}</h2>
