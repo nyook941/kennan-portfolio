@@ -77,7 +77,7 @@ function App() {
             position={"Cofounder, Software Engineer"}
             company={"Hidden Gems"}
             description={
-              "I developed a C# REST API on AWS, automating deployments for better efficiency and security. I enhanced documentation, expedited client-side development, and significantly improved code reliability and maintainability."
+              "I co-founded and helped develop an app that enables users to discover and order from family-owned restaurants. It also facilitates corporate catering for companies and offers additional services."
             }
           />
           <div className="Divider" />
