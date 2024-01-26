@@ -1,0 +1,48 @@
+.About-Container {
+  height: calc(100vh - 160px);
+  width: calc(100vw - 120px);
+  background: #364851;
+  display: grid;
+  grid-gap: 30px;
+  grid-column-gap: 20%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  padding: 60px;
+  padding-top: 100px;
+}
+
+.About-Container h1 {
+  color: white;
+  font-size: 32px;
+}
+
+.About-Container p {
+  color: white;
+  font-size: 18px;
+}
+
+.Description-Container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  grid-column: 1;
+  grid-row: 1 span 3;
+}
+
+.Skill-Container {
+  grid-column: 2;
+  border-radius: 10px;
+  padding: 30px;
+  width: 362px;
+}
+
+.Skill-Container h1 {
+  color: white;
+  font-size: 24px;
+}
+
+.Skill-Container li {
+  color: white;
+  font-size: 18px;
+}
