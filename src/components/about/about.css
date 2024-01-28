@@ -1,5 +1,5 @@
 .About-Container {
-  height: calc(100vh - 160px);
+  min-height: calc(100vh - 190px);
   width: calc(100vw - 120px);
   background: #364851;
   display: grid;
@@ -9,6 +9,7 @@
   grid-template-rows: auto auto auto;
   padding: 60px;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .About-Container h1 {
@@ -27,13 +28,13 @@
   padding: 20px;
   justify-content: center;
   grid-column: 1;
-  grid-row: 1 span 3;
+  grid-row: 1 / 3;
 }
 
 .Skill-Container {
   grid-column: 2;
   border-radius: 10px;
-  padding: 30px;
+  padding: 15px 20px 15px 20px;
   width: 362px;
 }
 

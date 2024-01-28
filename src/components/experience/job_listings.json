@@ -1,0 +1,29 @@
+[
+  {
+    "date": "May 2023 - August 2023",
+    "company": "Rhapsody Health",
+    "position": "Software Engineer Intern",
+    "skills": ["ASP.NET Core", "AWS", "DevOps"],
+    "location": "Frisco, TX",
+    "description": "Improved the product update process by developing an API that optimizes customer data handling",
+    "imgPath": "/images/rhapsody_logo.jfif"
+  },
+  {
+    "date": "August 2022 - Present",
+    "company": "Hidden Gems",
+    "position": "Full Stack Developer",
+    "skills": ["React Native", "AWS"],
+    "location": "Richardson, TX",
+    "description": "Developed a TypeScript React Native restaurant mobile app that allows users to find locally owned restaurants",
+    "imgPath": "/images/hiddengems_restuarants_logo.jfif"
+  },
+  {
+    "date": "January 2024 - Present",
+    "company": "Quality of life Technology Labs at UTD",
+    "position": "Undergratude Research Assistant",
+    "skills": ["React.js", "Langchain", "Llama Index"],
+    "location": "Richardson, TX",
+    "description": "Working on a custom voice input based chatbot to help people with anxiety",
+    "imgPath": "/images/UTD_logo.jpg"
+  }
+]

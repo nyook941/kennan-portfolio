@@ -1,0 +1,36 @@
+.Experience-Container {
+  min-height: calc(100vh - 240px);
+  width: calc(100vw);
+  background: #d1f1ff;
+  display: grid;
+  padding: 120px 30px 120px 30px;
+}
+
+.Vertical-Timeline {
+  background-color: transparent;
+  width: 100vw;
+}
+.Skills-Container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.Skill-Element {
+  background-color: white;
+  margin-right: 15px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+.Experience-Container h1 {
+  margin: 60px;
+}
+
+.Experience-Icon {
+  width: 94%;
+  height: 94%;
+  margin: 3% 3% 3% 3%;
+  border-radius: 50%;
+}
