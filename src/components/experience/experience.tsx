@@ -9,7 +9,7 @@ import jobListings from "./job_listings.json";
 export default function Experience() {
   return (
     <div className="Experience-Container">
-      {/* <p>Experience</p> */}
+      <h1>Experience</h1>
       <VerticalTimeline className="Vertical-Timeline">
         {jobListings.map((job, index) => (
           <VerticalTimelineElement

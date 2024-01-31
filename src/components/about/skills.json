@@ -1,0 +1,43 @@
+[
+  {
+    "title": "Frameworks and Libraries",
+    "skills": [
+      "React.js",
+      "React Native",
+      "ASP .NET Core",
+      "Node.js",
+      "FastAPI",
+      "OpenAPI(Swagger)",
+      "OpenCV",
+      "Langchain"
+    ]
+  },
+  {
+    "title": "Languages",
+    "skills": [
+      "Java",
+      "Javascript",
+      "Typescript",
+      "Python",
+      "C#",
+      "C/C++",
+      "SQL",
+      "GraphQL"
+    ]
+  },
+  {
+    "title": "Tools and Technologies",
+    "skills": [
+      "React.js",
+      "Git",
+      "AWS",
+      "Azure DevOps",
+      "GCP",
+      "Docker",
+      "JIRA",
+      "PostgreSQL",
+      "GraphQL",
+      "RESTful API Design"
+    ]
+  }
+]

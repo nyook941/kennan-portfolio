@@ -1,9 +1,11 @@
 .Experience-Container {
-  min-height: calc(100vh - 240px);
+  min-height: calc(100vh - 120px);
   width: calc(100vw);
-  background: #d1f1ff;
   display: grid;
-  padding: 120px 30px 120px 30px;
+  padding: 60px 30px 60px 30px;
+  background-image: url(../../../public/images/experience_background.png);
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .Vertical-Timeline {

@@ -1,14 +1,14 @@
 .Home-Container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Creates two columns with equal width */
+  grid-template-columns: 1fr 1fr;
   height: calc(100vh - 100px);
-  gap: 20px; /* Optional: space between grid items */
+  gap: 20px;
   padding-top: 100px;
   background-image: url(../../../public/homeBackround.png);
   background-size: cover;
   background-attachment: fixed;
-  justify-items: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
+  justify-items: center;
+  align-items: center;
 }
 
 .Description {

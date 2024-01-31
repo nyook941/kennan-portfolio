@@ -4,15 +4,13 @@ export default function SkillComponent({
   title,
   skills,
   gridRow,
-  backgroundColor,
 }: {
   title: string;
   skills: string[];
   gridRow: number;
-  backgroundColor: string;
 }) {
   return (
-    <div className="Skill-Container" style={{ gridRow, backgroundColor }}>
+    <div className="Skill-Container" style={{ gridRow }}>
       <h1>{title}</h1>
       <ul>
         {skills.map((item, index) => (

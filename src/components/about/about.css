@@ -3,7 +3,7 @@
   width: calc(100vw - 120px);
   background: #364851;
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 60px;
   grid-column-gap: 20%;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
@@ -33,9 +33,11 @@
 
 .Skill-Container {
   grid-column: 2;
-  border-radius: 10px;
-  padding: 15px 20px 15px 20px;
+  padding: 15px 0 15px 30px;
   width: 362px;
+  border-radius: 50px;
+  background: #364851;
+  box-shadow: 20px 20px 40px #2e3d45, -20px -20px 40px #3e535d;
 }
 
 .Skill-Container h1 {
