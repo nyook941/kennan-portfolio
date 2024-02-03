@@ -1,17 +1,26 @@
 .Projects-Container {
   min-height: calc(100vh - 160px);
-  width: calc(100vw);
+  width: calc(100vw - 60px);
   padding: 100px 30px 60px 30px;
   background-color: #332b64;
   color: white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.Projects-Container h1 {
+  display: grid;
+  grid-row: 1;
+  grid-column: 1 span 3;
 }
 
 .Projects-Card {
   box-sizing: border-box;
   width: 500px;
   height: 500px;
-  background: rgb(214, 214, 214);
-  border: 1px solid white;
+  background: white;
+  border: 3px solid #7d7d7d;
   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(6px);
   border-radius: 10px;
@@ -53,4 +62,33 @@
   font-size: 18;
   color: #7d7d7d;
   font-weight: 400;
+}
+
+.Projects-Card-Top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  /* background-color: blue; */
+  justify-content: center;
+}
+
+.Projects-Card-Move {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.Circle {
+  background-color: red;
+  margin: 0 5px 0 5px;
+  border-radius: 5px;
+  height: 10px;
+  width: 10px;
+  background-color: #d7d7d7;
+}
+
+.Projects-Modal-Container {
+  position: absolute;
+  background-color: white;
+  height: calc(100vh);
+  width: 100px;
 }

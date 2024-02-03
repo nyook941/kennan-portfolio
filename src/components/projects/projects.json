@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Motherboard Inspector",
+    "image": "/images/motherboard_id_thumbnail.png",
+    "description": "Winner of the Summer 2023 UTDesign Expo, the motherboard inspector uses AI/ML to automate the identification and diagnoses of faulty motherboards.",
+    "skills": ["Tesseract OCR", "OpenCV", "YOLOv8"]
+  },
+  {
+    "title": "Quality of Life Technology Labs Chatbot",
+    "image": "/images/motherboard_id_thumbnail.png",
+    "description": "Funded by Professor Lakshman Tamil, the Quality of Life Technology Labs (QoLTL) chatbot is a custom chatbot trained to answer any questions about QoLTL and it's research.",
+    "skills": ["React.js", "AWS", "Langchain", "Llama Index"]
+  }
+]

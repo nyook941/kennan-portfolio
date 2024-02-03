@@ -1,6 +1,6 @@
 .Experience-Container {
   min-height: calc(100vh - 120px);
-  width: calc(100vw);
+  width: calc(100vw - 60px);
   display: grid;
   padding: 60px 30px 60px 30px;
   background-image: url(../../../public/images/experience_background.png);
