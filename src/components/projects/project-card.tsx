@@ -15,13 +15,15 @@ export default function ProjectCard({ project }: { project: Project }) {
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
 
   const toggleModal = () => {
-    setIsProjectModalOpen(!isProjectModalOpen);
+    setIsProjectModalOpen(true);
   };
+
+  const closeModal = () => setIsProjectModalOpen(false);
 
   return (
     <div className="Projects-Card" onClick={toggleModal}>
       {createPortal(
-        <ProjectsModal isOpen={isProjectModalOpen} />,
+        <ProjectsModal isOpen={isProjectModalOpen} closeModal={closeModal} />,
         document.body
       )}
       <div className="Projects-Card-Top">

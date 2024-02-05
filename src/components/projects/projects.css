@@ -100,14 +100,15 @@
   backdrop-filter: blur(5px);
   height: 100%;
   opacity: 0;
-  animation: fadeIn 0.33s ease-out forwards;
+  transition: width 0.3s ease-out;
 }
 
 .Projects-Modal {
   display: flex;
   flex-direction: row;
   height: 100%;
-  animation: slideIn 0.33s ease-out forwards;
+  animation: slideIn 0.3s ease-out forwards;
+  position: relative;
 }
 
 .Projects-Modal-1 {
@@ -119,7 +120,19 @@
 .Projects-Modal-2 {
   background-color: #352f44;
   height: 100%;
-  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: slideIn1 0.3s ease-out forwards 0.2s;
+}
+
+.Projects-Modal-3 {
+  background-color: #5c5470;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: slideIn2 0.3s ease-out forwards 0.4s;
 }
 
 @keyframes slideIn {
@@ -136,17 +149,25 @@
     width: 0;
   }
   to {
-    width: 100%;
+    width: calc(100% - 40px);
   }
 }
 
-@keyframes fadeIn {
+@keyframes slideIn2 {
   from {
-    opacity: 0;
-    width: 100%;
+    width: 0;
   }
   to {
-    opacity: 1;
-    width: 60%;
+    width: calc(100% - 80px);
   }
+}
+
+.Projects-Modal-Background.close {
+  opacity: 0;
+  width: 100%;
+}
+
+.Projects-Modal-Background.open {
+  opacity: 1;
+  width: 60%;
 }
