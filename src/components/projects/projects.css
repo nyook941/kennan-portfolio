@@ -2,7 +2,7 @@
   min-height: calc(100vh - 160px);
   width: calc(100vw - 60px);
   padding: 100px 30px 60px 30px;
-  background-color: #332b64;
+  background-color: #2a2438;
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -12,15 +12,15 @@
 .Projects-Container h1 {
   display: grid;
   grid-row: 1;
-  grid-column: 1 span 3;
+  grid-column: 1 / 4;
 }
 
 .Projects-Card {
   box-sizing: border-box;
   width: 500px;
   height: 500px;
-  background: white;
-  border: 3px solid #7d7d7d;
+  background-color: #dbd8e3;
+  border: 3px solid #352f44;
   box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(6px);
   border-radius: 10px;
@@ -68,7 +68,6 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  /* background-color: blue; */
   justify-content: center;
 }
 
@@ -78,7 +77,6 @@
 }
 
 .Circle {
-  background-color: red;
   margin: 0 5px 0 5px;
   border-radius: 5px;
   height: 10px;
@@ -87,8 +85,68 @@
 }
 
 .Projects-Modal-Container {
-  position: absolute;
-  background-color: white;
+  position: fixed;
+  display: flex;
   height: calc(100vh);
-  width: 100px;
+  width: 100%;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.Projects-Modal-Background {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  height: 100%;
+  opacity: 0;
+  animation: fadeIn 0.33s ease-out forwards;
+}
+
+.Projects-Modal {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  animation: slideIn 0.33s ease-out forwards;
+}
+
+.Projects-Modal-1 {
+  background-color: #2a2438;
+  height: 100%;
+  width: 100%;
+}
+
+.Projects-Modal-2 {
+  background-color: #352f44;
+  height: 100%;
+  width: 100%;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 40%;
+  }
+}
+
+@keyframes slideIn1 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    width: 100%;
+  }
+  to {
+    opacity: 1;
+    width: 60%;
+  }
 }

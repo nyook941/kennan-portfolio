@@ -1,6 +1,8 @@
+import { createPortal } from "react-dom";
 import SkillTag from "../skill-tag/skill-tag";
 import ProjectsModal from "./project-more-info";
 import "./projects.css";
+import { useState } from "react";
 
 interface Project {
   title: string;
@@ -10,9 +12,18 @@ interface Project {
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsProjectModalOpen(!isProjectModalOpen);
+  };
+
   return (
-    <div className="Projects-Card">
-      <ProjectsModal />
+    <div className="Projects-Card" onClick={toggleModal}>
+      {createPortal(
+        <ProjectsModal isOpen={isProjectModalOpen} />,
+        document.body
+      )}
       <div className="Projects-Card-Top">
         <div className="Projects-Card-Move">
           <div className="Circle" />
@@ -25,7 +36,12 @@ export default function ProjectCard({ project }: { project: Project }) {
       <p>{project.description}</p>
       <div className="Skills-Container">
         {project.skills.map((skill, index) => (
-          <SkillTag skill={skill} backgroundColor="#7D7D7D" color="white" />
+          <SkillTag
+            skill={skill}
+            backgroundColor="#5c5470"
+            color="white"
+            key={index}
+          />
         ))}
       </div>
     </div>
