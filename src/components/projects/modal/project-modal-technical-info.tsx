@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ProjectsModalTech({
   isOpen,
@@ -17,14 +17,31 @@ export default function ProjectsModalTech({
 }) {
   const handleModalClick = (e: any) => {
     onClick();
-    console.log("clicking tech");
     e.stopPropagation();
   };
+
+  const [hasOpened, setHasOpened] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      const timer = setTimeout(() => {
+        setHasOpened(true);
+      }, 200);
+
+      return () => clearTimeout(timer);
+    } else {
+      setHasOpened(false);
+    }
+  }, [isOpen]);
 
   const isHover = hovered === "tech";
   const isSelected = section === "tech";
 
-  const className = `Projects-Modal tech ${isOpen ? "openTech" : ""} `;
+  const className = `Projects-Modal tech ${isOpen ? "open" : ""} ${
+    hasOpened ? "has-opened" : ""
+  } ${isHover && section === "about" ? "extend" : ""}`;
+
+  console.log(className);
 
   return (
     <div
