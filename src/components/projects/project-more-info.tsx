@@ -1,4 +1,7 @@
-import ProjectsModalAbout from "./project-modal-about";
+import { useEffect, useState } from "react";
+import ProjectsModalAbout from "./modal/project-modal-about";
+import ProjectsModalGallery from "./modal/project-modal-gallery";
+import ProjectsModalTech from "./modal/project-modal-technical-info";
 
 export default function ProjectsModal({
   isOpen,
@@ -9,12 +12,39 @@ export default function ProjectsModal({
 }) {
   const handleBackgroundClick = (e: any) => {
     e.stopPropagation();
+    setSection("about");
     closeModal();
   };
 
-  // Prevent the modal close function when clicking on the modal itself
-  const handleModalClick = (e: any) => {
-    e.stopPropagation(); // Stops the click event from propagating to the parent
+  const [section, setSection] = useState<"about" | "tech" | "gallery" | "none">(
+    "about"
+  );
+  const [hovered, setHovered] = useState<"about" | "tech" | "gallery" | "none">(
+    "about"
+  );
+
+  const handleClickAbout = () => {
+    setSection("about");
+  };
+  const handleHoverAbout = () => {
+    setHovered("about");
+  };
+  const handleMouseLeave = () => {
+    setHovered("none");
+  };
+
+  const handleClickTech = () => {
+    setSection("tech");
+  };
+  const handleHoverTech = () => {
+    setHovered("tech");
+  };
+
+  const handleClickGallery = () => {
+    setSection("gallery");
+  };
+  const handleHoverGallery = () => {
+    setHovered("gallery");
   };
 
   return (
@@ -22,15 +52,30 @@ export default function ProjectsModal({
       className={`Projects-Modal-Container ${isOpen ? "open" : ""}`}
       onClick={handleBackgroundClick}
     >
-      <ProjectsModalAbout isOpen={isOpen} />
-      <div
-        className={`Projects-Modal two ${isOpen ? "open2" : ""}`}
-        onClick={handleModalClick}
-      ></div>
-      <div
-        className={`Projects-Modal three ${isOpen ? "open3" : ""}`}
-        onClick={handleModalClick}
-      ></div>
+      <ProjectsModalGallery
+        isOpen={isOpen}
+        section={section}
+        hovered={hovered}
+        onClick={handleClickGallery}
+        onHover={handleHoverGallery}
+        onMouseLeave={handleMouseLeave}
+      />
+      <ProjectsModalTech
+        isOpen={isOpen}
+        section={section}
+        hovered={hovered}
+        onClick={handleClickTech}
+        onHover={handleHoverTech}
+        onMouseLeave={handleMouseLeave}
+      />
+      <ProjectsModalAbout
+        isOpen={isOpen}
+        section={section}
+        hovered={hovered}
+        onClick={handleClickAbout}
+        onHover={handleHoverAbout}
+        onMouseLeave={handleMouseLeave}
+      />
     </div>
   );
 }
