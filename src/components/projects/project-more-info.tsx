@@ -1,3 +1,5 @@
+import ProjectsModalAbout from "./project-modal-about";
+
 export default function ProjectsModal({
   isOpen,
   closeModal,
@@ -5,30 +7,30 @@ export default function ProjectsModal({
   isOpen: boolean;
   closeModal: () => void;
 }) {
-  const containerClassName = isOpen
-    ? "Projects-Modal-Container open"
-    : "Projects-Modal-Container close";
-
-  const backgroundClassName = isOpen
-    ? "Projects-Modal-Background open"
-    : "Projects-Modal-Background close";
-
   const handleBackgroundClick = (e: any) => {
     e.stopPropagation();
     closeModal();
   };
 
-  return isOpen ? (
-    <div className={containerClassName}>
+  // Prevent the modal close function when clicking on the modal itself
+  const handleModalClick = (e: any) => {
+    e.stopPropagation(); // Stops the click event from propagating to the parent
+  };
+
+  return (
+    <div
+      className={`Projects-Modal-Container ${isOpen ? "open" : ""}`}
+      onClick={handleBackgroundClick}
+    >
+      <ProjectsModalAbout isOpen={isOpen} />
       <div
-        className={backgroundClassName}
-        onClick={handleBackgroundClick}
+        className={`Projects-Modal two ${isOpen ? "open2" : ""}`}
+        onClick={handleModalClick}
       ></div>
-      {/* <div className="Projects-Modal" onClick={(e) => e.stopPropagation()}>
-        <div className="Projects-Modal-1"></div>
-        <div className="Projects-Modal-2"></div>
-        <div className="Projects-Modal-3"></div>
-      </div> */}
+      <div
+        className={`Projects-Modal three ${isOpen ? "open3" : ""}`}
+        onClick={handleModalClick}
+      ></div>
     </div>
-  ) : null;
+  );
 }
