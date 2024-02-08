@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function ProjectsModalGallery({
   isOpen,
@@ -20,9 +20,22 @@ export default function ProjectsModalGallery({
     e.stopPropagation();
   };
 
+  const isHover = hovered === "gallery";
+  const isSelected = section === "gallery";
+
+  const className = `Projects-Modal gallery ${isOpen ? "open" : ""} ${
+    (section === "about" && hovered !== "about") ||
+    (section === "gallery" && hovered !== "gallery") ||
+    (section === "tech" && hovered !== "tech")
+      ? "extend"
+      : ""
+  } ${hovered === "none" ? "none" : ""}`;
+
+  console.log(className);
+
   return (
     <div
-      className={`Projects-Modal gallery ${isOpen ? "openGallery" : ""} `}
+      className={className}
       onClick={handleModalClick}
       onMouseEnter={() => {
         onHover();

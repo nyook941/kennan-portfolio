@@ -39,9 +39,16 @@ export default function ProjectsModalTech({
 
   const className = `Projects-Modal tech ${isOpen ? "open" : ""} ${
     hasOpened ? "has-opened" : ""
-  } ${isHover && section === "about" ? "extend" : ""}`;
-
-  console.log(className);
+  } ${
+    (isHover && section === "about") || (hovered === "about" && isSelected)
+      ? "extend"
+      : ""
+  } ${section === "gallery" ? "hide" : ""} ${
+    (section === "gallery" && hovered === "about") ||
+    (section === "gallery" && hovered === "tech")
+      ? "exthide"
+      : ""
+  }`;
 
   return (
     <div

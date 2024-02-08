@@ -110,7 +110,7 @@
 
 .Projects-Modal {
   height: 100%;
-  width: 40%;
+  width: 45%;
   position: absolute;
   top: 0;
   left: 0;
@@ -130,7 +130,7 @@
   transition: transform 0.3s ease-out;
 }
 .about.not-hover-not-selected {
-  transform: translateX(calc(-100% + 30px));
+  transform: translateX(calc(-100% + 60px));
 }
 .Projects-Modal.about.has-opened.open {
   transform: translateX(0);
@@ -145,18 +145,29 @@
   transition: transform 0.3s ease-out 0.2s;
 }
 .Projects-Modal.tech.has-opened.open {
-  transform: translateX(30px);
+  transform: translateX(60px);
   transition: transform 0.3s ease-out;
 }
 .Projects-Modal.tech.has-opened.open.extend {
   transform: translateX(120px);
 }
+.Projects-Modal.tech.has-opened.open.hide {
+  transform: translateX(calc(-100% + 121px));
+}
+.Projects-Modal.tech.has-opened.open.exthide {
+  transform: translateX(calc(-100% + 180px));
+}
 
-.gallery {
+.Projects-Modal.gallery {
   background-color: #2a2438;
   transition: transform 0.3s ease-out;
 }
-
-.Projects-Modal.openGallery {
-  transform: translateX(60px);
+.Projects-Modal.gallery.open {
+  transform: translateX(120px);
+}
+.Projects-Modal.gallery.open.extend {
+  transform: translateX(180px);
+}
+.Projects-Modal.gallery.open.none {
+  transform: translateX(120px);
 }
