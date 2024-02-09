@@ -115,10 +115,62 @@
   top: 0;
   left: 0;
   transform: translateX(-100%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.Projects-Modal .content {
+  padding: 60px 60px 0 60px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+.Projects-Modal h1 {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  justify-self: center;
+  align-self: center;
+  font-weight: 400;
+  color: transparent;
+  transition: color 0.3s ease-out;
+}
+
+.Projects-Modal h2 {
+  color: white;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.Projects-Modal video {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.Projects-Modal h3 {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+}
+
+.Projects-Modal p {
+  font-size: 18px;
+  color: white;
+}
+
+.Projects-Modal img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.Projects-Modal h1.shown {
+  color: white;
 }
 
 .Projects-Modal.about {
-  background-color: #5c5470;
+  background-color: #f95959;
   transition: transform 0.3s ease-out;
 }
 .Projects-Modal.about:not(.has-opened).open {
@@ -138,7 +190,7 @@
 }
 
 .Projects-Modal.tech {
-  background-color: #352f44;
+  background-color: #455d7a;
   transition: transform 0.3s ease-out;
 }
 .Projects-Modal.tech:not(.has-opened).open {
@@ -159,7 +211,7 @@
 }
 
 .Projects-Modal.gallery {
-  background-color: #2a2438;
+  background-color: #233142;
   transition: transform 0.3s ease-out;
 }
 .Projects-Modal.gallery.open {

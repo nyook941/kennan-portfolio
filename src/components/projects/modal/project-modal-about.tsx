@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Project from "../../../models/project";
 
 export default function ProjectsModalAbout({
   isOpen,
@@ -7,6 +8,7 @@ export default function ProjectsModalAbout({
   hovered,
   onHover,
   onMouseLeave,
+  project,
 }: {
   isOpen: boolean;
   section: "about" | "tech" | "gallery" | "none";
@@ -14,6 +16,7 @@ export default function ProjectsModalAbout({
   onClick: () => void;
   onHover: () => void;
   onMouseLeave: () => void;
+  project: Project;
 }) {
   const handleModalClick = (e: any) => {
     onClick();
@@ -53,6 +56,30 @@ export default function ProjectsModalAbout({
       onMouseLeave={() => {
         onMouseLeave();
       }}
-    ></div>
+    >
+      <div className="content">
+        <h2>{project.title}</h2>
+        <video controls>
+          <source src={project.moreInfo.video} type="video/mp4" />
+        </video>
+        {project.moreInfo.about.map((section, index) => (
+          <>
+            <h3 key={index}>{section.subtitle}</h3>
+            {section.content.map((p, index) => (
+              <p key={index}>
+                {p}
+                <br />
+                {section.images[index] === "" ? (
+                  <></>
+                ) : (
+                  <img src={section.images[index]}></img>
+                )}
+              </p>
+            ))}
+          </>
+        ))}
+      </div>
+      <h1 className={isHover ? "shown" : ""}>ABOUT</h1>
+    </div>
   );
 }

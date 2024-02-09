@@ -43,6 +43,9 @@ export default function ProjectsModalGallery({
       onMouseLeave={() => {
         onMouseLeave();
       }}
-    ></div>
+    >
+      <h2>hello</h2>
+      <h1 className={isSelected || isHover ? "shown" : ""}>GALLERY</h1>
+    </div>
   );
 }

@@ -60,6 +60,9 @@ export default function ProjectsModalTech({
       onMouseLeave={() => {
         onMouseLeave();
       }}
-    ></div>
+    >
+      <h2>hello</h2>
+      <h1 className={isSelected || isHover ? "shown" : ""}>TECHNICAL INFO</h1>
+    </div>
   );
 }

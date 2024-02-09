@@ -6,6 +6,7 @@ export default function Projects() {
   return (
     <div className="Projects-Container">
       <h1>Projects</h1>
+
       {projects.map((project, index) => (
         <ProjectCard project={project} key={index} />
       ))}

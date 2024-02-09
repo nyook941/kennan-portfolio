@@ -2,13 +2,16 @@ import { useEffect, useState } from "react";
 import ProjectsModalAbout from "./modal/project-modal-about";
 import ProjectsModalGallery from "./modal/project-modal-gallery";
 import ProjectsModalTech from "./modal/project-modal-technical-info";
+import Project from "../../models/project";
 
 export default function ProjectsModal({
   isOpen,
   closeModal,
+  project,
 }: {
   isOpen: boolean;
   closeModal: () => void;
+  project: Project;
 }) {
   const handleBackgroundClick = (e: any) => {
     e.stopPropagation();
@@ -75,6 +78,7 @@ export default function ProjectsModal({
         onClick={handleClickAbout}
         onHover={handleHoverAbout}
         onMouseLeave={handleMouseLeave}
+        project={project}
       />
     </div>
   );

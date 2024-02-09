@@ -3,13 +3,7 @@ import SkillTag from "../skill-tag/skill-tag";
 import ProjectsModal from "./project-more-info";
 import "./projects.css";
 import { useState } from "react";
-
-interface Project {
-  title: string;
-  image: string;
-  description: string;
-  skills: string[];
-}
+import Project from "../../models/project";
 
 export default function ProjectCard({ project }: { project: Project }) {
   const [isProjectModalOpen, setIsProjectModalOpen] = useState(false);
@@ -23,7 +17,11 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="Projects-Card" onClick={toggleModal}>
       {createPortal(
-        <ProjectsModal isOpen={isProjectModalOpen} closeModal={closeModal} />,
+        <ProjectsModal
+          isOpen={isProjectModalOpen}
+          closeModal={closeModal}
+          project={project}
+        />,
         document.body
       )}
       <div className="Projects-Card-Top">
