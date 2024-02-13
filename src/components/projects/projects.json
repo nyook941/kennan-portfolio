@@ -7,42 +7,71 @@
     "moreInfo": {
       "about": [
         {
-          "subtitle": "What is it?",
+          "subtitle": "Use Case",
           "content": [
-            "The motherboard inspector is a software used to identify and detect issues with faulty motherboards, ie. burn marks, dented ports, spill stains, etc. The software combines a multitude of algorithms and techniques including Optical Character Recognition (OCR), image processing, and Object Detection.",
-            "Built for the UTDesign Capstone—a mandatory project for UTD seniors, sponsored by companies—our project, sponsored by SMS Infocomm, won first place at the Summer 2023 UTDesign Expo. This expo is a semester-end competition where UTDesign Capstone projects are evaluated and ranked by judges."
-          ],
-          "images": ["", "/images/motherboard_id_winjfif.jfif"],
-          "captions": ["", "The project poster and the UTDesign expo plaque"]
+            {
+              "p": "The motherboard inspector is a software used to identify and detect issues with faulty motherboards, ie. burn marks, dented ports, spill stains, etc. The software combines a multitude of algorithms and techniques including Optical Character Recognition (OCR), image processing, and Object Detection.",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "Built for the UTDesign Capstone—a mandatory project for UTD seniors, sponsored by companies—our project, sponsored by SMS Infocomm, won first place at the Summer 2023 UTDesign Expo. This expo is a semester-end competition where UTDesign Capstone projects are evaluated and ranked by judges.",
+              "img": ["/images/motherboard_id_winjfif.jfif"],
+              "cap": ["The project poster and the UTDesign expo plaque"]
+            }
+          ]
+        },
+        {
+          "subtitle": "Sponsor",
+          "content": [
+            {
+              "p": "The software was built for SMS InfoComm, who specializes in fixing faulty motherboards. ",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
         }
       ],
-      "techInfo": [""],
+      "techInfo": [
+        {
+          "subtitle": "UI Design",
+          "content": [
+            {
+              "p": "The UI of the software was designed using PyQt5, allowing for simple signals and slots communication with the front-end and backend algorithms within the same program. The UI contains several screens, each with it's own purpose.",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "From the UI, the user is prompted to input station and user ID for security purposes. Next, the user can take an image of their motherboard using a camera connected to their system, as seen in the image below. The user then has the option to ID the motherboard, or detect defects and I/O ports, also seen the images below.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        },
+        {
+          "subtitle": "Motherboard Identification",
+          "content": [
+            {
+              "p": "The software takes several approaches to ensure accurate identification of the motherboard, namely scanning the 2D matrix on the motherboard, or optical character recognition (OCR).",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "As seen from the image below, the software first attempts to scan the 2D bar matrix. To ensure high accuracy the image of the ID block is preprocessed through several OpenCV algorithms, utilizing a multitude of image manipulation techniques including gray scaling, gaussian blur, and so on. Each preprocessed image is sent to the pylibdmtx Python library to convert into a string PPID value. The final step involves a postproccessing algorithm that uses regex to parse and indetify if the scanned PPID is in the correct format. Depending on the amount of matching scans and regex parsing, a confidence rating can be determined.",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "If the confidence rating of the barcode scans return to be less that 70%, the software resorts to indentification with OCR. First, the image of the ID block is cropped to only contain the written PPID of the motherboard on the ID block. This is acheived by using bounding boxes and contours with OpenCV. Like the barcode scanning algorithm, the OCR algorithm passes the cropped image through multiple OpenCV preprocessing algorithms yet again. However, this time, the images are passed to a Tesseract, an open source OCR model developed by Google. The images are once again postprocessed through the regex algorithm, and the confidence rating is adjusted and displayed depending on the output.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        }
+      ],
       "gallery": [""],
       "githubLink": "",
       "video": "/videos/Motherboard Identification.mp4"
-    }
-  },
-  {
-    "title": "Quality of Life Technology Labs Chatbot",
-    "image": "/images/motherboard_id_thumbnail.png",
-    "description": "Funded by Professor Lakshman Tamil, the Quality of Life Technology Labs (QoLTL) chatbot is a custom chatbot trained to answer any questions about QoLTL and it's research.",
-    "skills": ["React.js", "AWS", "Langchain", "Llama Index"],
-    "moreInfo": {
-      "about": [
-        {
-          "subtitle": "What is it?",
-          "content": [
-            "The motherboard inspector is a software used to identify and detect issues with faulty motherboards, ie. burn marks, dented ports, spill stains, etc.",
-            "The software combines a multitude of algorithms and techniques including Optical Character Recognition (OCR), image processing, and Object Detection."
-          ],
-          "images": [],
-          "captions": []
-        }
-      ],
-      "techInfo": [""],
-      "gallery": [""],
-      "githubLink": "",
-      "video": ""
     }
   }
 ]

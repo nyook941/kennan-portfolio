@@ -1,0 +1,49 @@
+{
+  "title": "Quality of Life Technology Labs Chatbot",
+  "image": "/images/motherboard_id_thumbnail.png",
+  "description": "Funded by Professor Lakshman Tamil, the Quality of Life Technology Labs (QoLTL) chatbot is a custom chatbot trained to answer any questions about QoLTL and it's research.",
+  "skills": ["React.js", "AWS", "Langchain", "Llama Index"],
+  "moreInfo": {
+    "about": [
+      {
+        "subtitle": "Use Case",
+        "content": [
+          {
+            "p": "The motherboard inspector is a software used to identify and detect issues with faulty motherboards, ie. burn marks, dented ports, spill stains, etc. The software combines a multitude of algorithms and techniques including Optical Character Recognition (OCR), image processing, and Object Detection.",
+            "img": [""],
+            "captions": [""]
+          },
+          {
+            "p": "Built for the UTDesign Capstone—a mandatory project for UTD seniors, sponsored by companies—our project, sponsored by SMS Infocomm, won first place at the Summer 2023 UTDesign Expo. This expo is a semester-end competition where UTDesign Capstone projects are evaluated and ranked by judges.",
+            "img": ["/images/motherboard_id_winjfif.jfif"],
+            "captions": ["The project poster and the UTDesign expo plaque"]
+          }
+        ]
+      },
+      {
+        "subtitle": "Sponsor",
+        "content": [
+          {
+            "p": "The software was built for SMS InfoComm, who specializes in fixing faulty motherboards.",
+            "img": [""],
+            "captions": [""]
+          }
+        ]
+      }
+    ],
+    "techInfo": [
+      {
+        "subtitle": "What is it?",
+        "content": [
+          "The motherboard inspector is a software used to identify and detect issues with faulty motherboards, ie. burn marks, dented ports, spill stains, etc. The software combines a multitude of algorithms and techniques including Optical Character Recognition (OCR), image processing, and Object Detection.",
+          "Built for the UTDesign Capstone—a mandatory project for UTD seniors, sponsored by companies—our project, sponsored by SMS Infocomm, won first place at the Summer 2023 UTDesign Expo. This expo is a semester-end competition where UTDesign Capstone projects are evaluated and ranked by judges."
+        ],
+        "images": ["", "/images/motherboard_id_winjfif.jfif"],
+        "captions": ["", "The project poster and the UTDesign expo plaque"]
+      }
+    ],
+    "gallery": [""],
+    "githubLink": "",
+    "video": ""
+  }
+}

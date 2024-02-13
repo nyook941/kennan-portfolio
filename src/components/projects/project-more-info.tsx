@@ -70,6 +70,7 @@ export default function ProjectsModal({
         onClick={handleClickTech}
         onHover={handleHoverTech}
         onMouseLeave={handleMouseLeave}
+        project={project}
       />
       <ProjectsModalAbout
         isOpen={isOpen}

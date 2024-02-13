@@ -8,7 +8,7 @@ export default interface Project {
 
 interface MoreInfo {
   about: Section[];
-  techInfo: string[];
+  techInfo: Section[];
   gallery: string[];
   githubLink: string;
   video: string;
@@ -16,7 +16,11 @@ interface MoreInfo {
 
 interface Section {
   subtitle: string;
-  content: string[];
-  images: string[];
-  captions: string[];
+  content: ContentItem[];
+}
+
+interface ContentItem {
+  p: string;
+  img: string[];
+  cap: string[];
 }

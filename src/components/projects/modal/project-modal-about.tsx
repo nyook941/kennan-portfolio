@@ -65,15 +65,13 @@ export default function ProjectsModalAbout({
         {project.moreInfo.about.map((section, index) => (
           <>
             <h3 key={index}>{section.subtitle}</h3>
-            {section.content.map((p, index) => (
+            {section.content.map((content, index) => (
               <p key={index}>
-                {p}
+                {content.p}
                 <br />
-                {section.images[index] === "" ? (
-                  <></>
-                ) : (
-                  <img src={section.images[index]}></img>
-                )}
+                {content.img.map((img, index) => (
+                  <>{img !== "" && <img src={img} key={index}></img>}</>
+                ))}
               </p>
             ))}
           </>

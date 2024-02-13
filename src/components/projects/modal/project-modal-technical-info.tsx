@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Project from "../../../models/project";
 
 export default function ProjectsModalTech({
   isOpen,
@@ -7,6 +8,7 @@ export default function ProjectsModalTech({
   hovered,
   onHover,
   onMouseLeave,
+  project,
 }: {
   isOpen: boolean;
   section: "about" | "tech" | "gallery" | "none";
@@ -14,6 +16,7 @@ export default function ProjectsModalTech({
   onClick: () => void;
   onHover: () => void;
   onMouseLeave: () => void;
+  project: Project;
 }) {
   const handleModalClick = (e: any) => {
     onClick();
@@ -61,8 +64,23 @@ export default function ProjectsModalTech({
         onMouseLeave();
       }}
     >
-      <h2>hello</h2>
-      <h1 className={isSelected || isHover ? "shown" : ""}>TECHNICAL INFO</h1>
+      <div className="content">
+        {project.moreInfo.techInfo.map((section, index) => (
+          <>
+            <h3 key={index}>{section.subtitle}</h3>
+            {section.content.map((content, index) => (
+              <p key={index}>
+                {content.p}
+                <br />
+                {content.img.map((img, index) => (
+                  <>{img !== "" && <img src={img} key={index}></img>}</>
+                ))}
+              </p>
+            ))}
+          </>
+        ))}
+      </div>
+      <h1 className={isHover ? "shown" : ""}>TECHNICAL INFO</h1>
     </div>
   );
 }
