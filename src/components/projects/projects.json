@@ -1,7 +1,7 @@
 [
   {
     "title": "Motherboard Inspector",
-    "image": "/images/motherboard_id_thumbnail.png",
+    "image": "/images/motherboard-id/motherboard_id_thumbnail.png",
     "description": "Winner of the Summer 2023 UTDesign Expo, the motherboard inspector uses AI/ML to automate the identification and diagnoses of faulty motherboards.",
     "skills": ["Tesseract OCR", "OpenCV", "YOLOv8"],
     "moreInfo": {
@@ -16,7 +16,7 @@
             },
             {
               "p": "Built for the UTDesign Capstone—a mandatory project for UTD seniors, sponsored by companies—our project, sponsored by SMS Infocomm, won first place at the Summer 2023 UTDesign Expo. This expo is a semester-end competition where UTDesign Capstone projects are evaluated and ranked by judges.",
-              "img": ["/images/motherboard_id_winjfif.jfif"],
+              "img": ["/images/motherboard-id/motherboard_id_winjfif.jfif"],
               "cap": ["The project poster and the UTDesign expo plaque"]
             }
           ]
@@ -37,14 +37,41 @@
           "subtitle": "UI Design",
           "content": [
             {
-              "p": "The UI of the software was designed using PyQt5, allowing for simple signals and slots communication with the front-end and backend algorithms within the same program. The UI contains several screens, each with it's own purpose.",
+              "p": "The software's UI, designed with PyQt5, supports efficient interaction between the front-end and back-end through signals and slots. It features multiple screens, each serving a specific function.",
               "img": [""],
               "cap": [""]
             },
             {
-              "p": "From the UI, the user is prompted to input station and user ID for security purposes. Next, the user can take an image of their motherboard using a camera connected to their system, as seen in the image below. The user then has the option to ID the motherboard, or detect defects and I/O ports, also seen the images below.",
+              "p": "Users enter station and user IDs for security. They can then capture a motherboard image using a connected camera. Options include motherboard ID, defect detection, and I/O port identification, illustrated below.",
+              "img": ["/images/motherboard-id/motherboard_id_main_page.png"],
+              "cap": [""]
+            }
+          ]
+        },
+        {
+          "subtitle": "Object Detection",
+          "content": [
+            {
+              "p": "The software employs YOLOv8 for object detection to analyze motherboards. Training involved Roboflow for dataset annotation and management, optimizing YOLOv8 model performance.",
               "img": [""],
               "cap": [""]
+            },
+            {
+              "p": "The ID block, containing the motherboard's unique PPID in text or a 2D matrix barcode, is identified using YOLOv8. The model outputs a cropped image of the block for further analysis (refer to the motherboard identification section).",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "YOLOv8 also detects I/O ports, aiding in motherboard identification by matching port configurations to specific models.",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "Defects such as burns, liquid spill discolorations, and missing thermal paste are identified using YOLOv8, trained specifically to recognize these issues.",
+              "img": ["/images/motherboard-id/yolov8.png"],
+              "cap": [
+                "USB ports, burns, ID blocks, thermal paste, and discolorations identified by YOLOv8."
+              ]
             }
           ]
         },
@@ -52,17 +79,17 @@
           "subtitle": "Motherboard Identification",
           "content": [
             {
-              "p": "The software takes several approaches to ensure accurate identification of the motherboard, namely scanning the 2D matrix on the motherboard, or optical character recognition (OCR).",
+              "p": "The software identifies motherboards using 2D matrix scanning or OCR. These methods ensure precision in recognition.",
               "img": [""],
               "cap": [""]
             },
             {
-              "p": "As seen from the image below, the software first attempts to scan the 2D bar matrix. To ensure high accuracy the image of the ID block is preprocessed through several OpenCV algorithms, utilizing a multitude of image manipulation techniques including gray scaling, gaussian blur, and so on. Each preprocessed image is sent to the pylibdmtx Python library to convert into a string PPID value. The final step involves a postproccessing algorithm that uses regex to parse and indetify if the scanned PPID is in the correct format. Depending on the amount of matching scans and regex parsing, a confidence rating can be determined.",
+              "p": "Initially, it scans the motherboard's 2D bar matrix. Image preprocessing involves OpenCV algorithms for gray scaling, gaussian blur, etc. The pylibdmtx library reads the preprocessed image, converting it to a string PPID value. Regex postprocessing checks the PPID format, determining a confidence rating based on scan matches and regex results.",
               "img": [""],
               "cap": [""]
             },
             {
-              "p": "If the confidence rating of the barcode scans return to be less that 70%, the software resorts to indentification with OCR. First, the image of the ID block is cropped to only contain the written PPID of the motherboard on the ID block. This is acheived by using bounding boxes and contours with OpenCV. Like the barcode scanning algorithm, the OCR algorithm passes the cropped image through multiple OpenCV preprocessing algorithms yet again. However, this time, the images are passed to a Tesseract, an open source OCR model developed by Google. The images are once again postprocessed through the regex algorithm, and the confidence rating is adjusted and displayed depending on the output.",
+              "p": "If barcode scan confidence is below 70%, OCR is used. The software crops the ID block to the PPID, using OpenCV for bounding boxes and contours. Preprocessed images go through OCR with Tesseract by Google. A regex algorithm postprocesses the output, adjusting the confidence rating accordingly.",
               "img": [""],
               "cap": [""]
             }
