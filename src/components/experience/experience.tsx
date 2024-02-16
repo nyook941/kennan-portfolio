@@ -15,7 +15,7 @@ const Experience = forwardRef<HTMLDivElement, {}>((props, ref) => {
         {jobListings.map((job, index) => (
           <VerticalTimelineElement
             key={index}
-            contentStyle={{ background: "#C9C0FF", color: "black" }}
+            contentStyle={{ background: "#E1EFF6", color: "black" }}
             contentArrowStyle={{ borderRight: "7px solid  #C9C0FF" }}
             date={job.date}
             iconStyle={{ background: "#C9C0FF", color: "#fff" }}

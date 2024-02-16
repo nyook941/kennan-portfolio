@@ -2,7 +2,7 @@
   min-height: calc(100vh - 160px);
   width: calc(100vw - 60px);
   padding: 100px 30px 60px 30px;
-  background-color: #2a2438;
+  background-color: #476a6f;
   color: white;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -99,6 +99,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-out, visibility 0s 0.3s;
+  z-index: 1000;
 }
 
 .Projects-Modal-Container.open {
@@ -111,12 +112,13 @@
 .Projects-Modal {
   height: 100%;
   width: 60%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   transform: translateX(-100%);
   display: flex;
   justify-content: space-between;
+  z-index: 2;
 }
 
 .Projects-Modal .content {

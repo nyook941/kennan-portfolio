@@ -19,13 +19,10 @@ export default function Header({
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2; // Middle of the viewport
-
-      // Helper function to get offsetTop
+      const scrollPosition = window.scrollY + window.innerHeight / 10;
       const getTop = (ref: React.RefObject<HTMLDivElement>) =>
         ref.current?.offsetTop ?? 0;
 
-      // Check which section is currently active
       if (scrollPosition >= getTop(projectsRef) && projectsRef.current) {
         setActiveSection("projects");
       } else if (
@@ -41,10 +38,10 @@ export default function Header({
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Initialize on component mount
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [homeRef, aboutRef, experienceRef, projectsRef]); // Depend on refs to re-attach handler if they change
+  }, [homeRef, aboutRef, experienceRef, projectsRef]);
 
   const scrollToSection = (
     ref: React.RefObject<HTMLDivElement>,
@@ -56,11 +53,19 @@ export default function Header({
   };
 
   const getButtonClass = (sectionName: string) => {
-    return `Nav-element ${activeSection === sectionName ? "bolded" : ""}`;
+    return `Nav-element ${activeSection === sectionName ? "bolded" : ""} `;
   };
 
+  const containerClassName = `Nav-bar ${
+    activeSection === "about" || activeSection === "projects"
+      ? "white-text"
+      : ""
+  }`;
+
+  console.log(containerClassName);
+
   return (
-    <div className="Nav-bar">
+    <div className={containerClassName}>
       <div className="Name">
         <h1>Kennan Wu</h1>
         <h2>Software Engineer</h2>

@@ -10,7 +10,22 @@
   top: 0;
   left: 0;
   background: transparent;
-  z-index: 1000;
+  border-radius: 0 0 10px 10px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(1px);
+  z-index: 1;
+  color: black;
+  transition: color 0.5s ease;
+  border-color: black;
+}
+
+.Nav-bar.white-text .Nav-element {
+  color: white;
+  border-color: white;
+}
+
+.Nav-bar.white-text {
+  color: white;
 }
 
 .Name {
@@ -45,6 +60,11 @@
 }
 
 .Nav-element.bolded {
+  font-weight: 700;
+  border-bottom-width: 5px;
+}
+
+.Nav-element:hover {
   font-weight: 700;
   border-bottom-width: 5px;
 }

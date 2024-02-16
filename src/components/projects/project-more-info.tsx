@@ -26,6 +26,18 @@ export default function ProjectsModal({
     "about"
   );
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+
+    return () => {
+      document.body.style.overflow = "visible";
+    };
+  }, [isOpen]);
+
   const handleClickAbout = () => {
     setSection("about");
   };
