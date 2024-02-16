@@ -2,6 +2,7 @@
   {
     "title": "Motherboard Inspector",
     "image": "/images/motherboard-id/motherboard_id_thumbnail.png",
+    "caption": "The UI after a motherboard's defects and ports have been identified.",
     "description": "Winner of the Summer 2023 UTDesign Expo, the motherboard inspector uses AI/ML to automate the identification and diagnoses of faulty motherboards.",
     "skills": ["Tesseract OCR", "OpenCV", "YOLOv8"],
     "moreInfo": {
@@ -44,7 +45,7 @@
             {
               "p": "Users enter station and user IDs for security. They can then capture a motherboard image using a connected camera. Options include motherboard ID, defect detection, and I/O port identification, illustrated below.",
               "img": ["/images/motherboard-id/motherboard_id_main_page.png"],
-              "cap": [""]
+              "cap": ["The main page of the motherboard identification UI"]
             }
           ]
         },

@@ -62,6 +62,7 @@ export default function ProjectsModal({
         onClick={handleClickGallery}
         onHover={handleHoverGallery}
         onMouseLeave={handleMouseLeave}
+        project={project}
       />
       <ProjectsModalTech
         isOpen={isOpen}

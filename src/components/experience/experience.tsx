@@ -1,3 +1,4 @@
+import React, { forwardRef } from "react";
 import "./experience.css";
 import {
   VerticalTimeline,
@@ -6,9 +7,9 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import jobListings from "./job_listings.json";
 
-export default function Experience() {
+const Experience = forwardRef<HTMLDivElement, {}>((props, ref) => {
   return (
-    <div className="Experience-Container">
+    <div className="Experience-Container" ref={ref}>
       <h1>Experience</h1>
       <VerticalTimeline className="Vertical-Timeline">
         {jobListings.map((job, index) => (
@@ -22,7 +23,7 @@ export default function Experience() {
               <img
                 src={job.imgPath}
                 className="Experience-Icon"
-                alt={"Company Logo"}
+                alt="Company Logo"
               />
             }
           >
@@ -34,8 +35,8 @@ export default function Experience() {
             </h4>
             <p>{job.description}</p>
             <div className="Skills-Container">
-              {job.skills.map((skill, index) => (
-                <div className="Skill-Element" key={index}>
+              {job.skills.map((skill, skillIndex) => (
+                <div className="Skill-Element" key={skillIndex}>
                   {skill}
                 </div>
               ))}
@@ -45,4 +46,6 @@ export default function Experience() {
       </VerticalTimeline>
     </div>
   );
-}
+});
+
+export default Experience;

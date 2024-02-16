@@ -58,19 +58,26 @@ export default function ProjectsModalAbout({
       }}
     >
       <div className="content">
-        <h2>{project.title}</h2>
-        <video controls>
-          <source src={project.moreInfo.video} type="video/mp4" />
-        </video>
         {project.moreInfo.about.map((section, index) => (
           <>
+            <video src={project.moreInfo.video} controls>
+              {" "}
+              Your browser does not support this video.
+            </video>
             <h3 key={index}>{section.subtitle}</h3>
             {section.content.map((content, index) => (
               <p key={index}>
                 {content.p}
                 <br />
                 {content.img.map((img, index) => (
-                  <>{img !== "" && <img src={img} key={index}></img>}</>
+                  <>
+                    {img !== "" && (
+                      <div className="img-container">
+                        <img src={img} key={index}></img>
+                        <p className="caption">{content.cap[index]}</p>
+                      </div>
+                    )}
+                  </>
                 ))}
               </p>
             ))}

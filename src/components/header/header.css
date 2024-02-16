@@ -44,7 +44,7 @@
   transition: font-weight 0.3s ease, border-bottom-width 0.3s ease;
 }
 
-.Nav-element:hover {
+.Nav-element.bolded {
   font-weight: 700;
   border-bottom-width: 5px;
 }

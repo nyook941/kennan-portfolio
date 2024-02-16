@@ -73,7 +73,14 @@ export default function ProjectsModalTech({
                 {content.p}
                 <br />
                 {content.img.map((img, index) => (
-                  <>{img !== "" && <img src={img} key={index}></img>}</>
+                  <>
+                    {img !== "" && (
+                      <div className="img-container">
+                        <img src={img} key={index}></img>
+                        <p className="caption">{content.cap[index]}</p>
+                      </div>
+                    )}
+                  </>
                 ))}
               </p>
             ))}

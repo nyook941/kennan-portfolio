@@ -1,6 +1,7 @@
 export default interface Project {
   title: string;
   image: string;
+  caption: string;
   description: string;
   skills: string[];
   moreInfo: MoreInfo;

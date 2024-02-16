@@ -1,10 +1,11 @@
+import { forwardRef } from "react";
 import ProjectCard from "./project-card";
 import "./projects.css";
 import projects from "./projects.json";
 
-export default function Projects() {
+const Projects = forwardRef<HTMLDivElement, {}>((props, ref) => {
   return (
-    <div className="Projects-Container">
+    <div className="Projects-Container" ref={ref}>
       <h1>Projects</h1>
 
       {projects.map((project, index) => (
@@ -12,4 +13,6 @@ export default function Projects() {
       ))}
     </div>
   );
-}
+});
+
+export default Projects;
