@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/kennan-portfolio/static/css/main.d6d719a4.css",
-    "main.js": "/kennan-portfolio/static/js/main.7736e93f.js",
-    "static/js/787.7da95b79.chunk.js": "/kennan-portfolio/static/js/787.7da95b79.chunk.js",
-    "static/media/background.png": "/kennan-portfolio/static/media/background.8bd4a6e1a930f94e262f.png",
+    "main.css": "/kennan-portfolio/static/css/main.3af80828.css",
+    "main.js": "/kennan-portfolio/static/js/main.4bd7ebe5.js",
+    "static/js/787.0e8562ea.chunk.js": "/kennan-portfolio/static/js/787.0e8562ea.chunk.js",
+    "static/media/experience_background.png": "/kennan-portfolio/static/media/experience_background.4a405aedc98e419fa04d.png",
+    "static/media/homeBackround.png": "/kennan-portfolio/static/media/homeBackround.2366c7e1f38951699869.png",
     "index.html": "/kennan-portfolio/index.html",
-    "main.d6d719a4.css.map": "/kennan-portfolio/static/css/main.d6d719a4.css.map",
-    "main.7736e93f.js.map": "/kennan-portfolio/static/js/main.7736e93f.js.map",
-    "787.7da95b79.chunk.js.map": "/kennan-portfolio/static/js/787.7da95b79.chunk.js.map"
+    "main.3af80828.css.map": "/kennan-portfolio/static/css/main.3af80828.css.map",
+    "main.4bd7ebe5.js.map": "/kennan-portfolio/static/js/main.4bd7ebe5.js.map",
+    "787.0e8562ea.chunk.js.map": "/kennan-portfolio/static/js/787.0e8562ea.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d6d719a4.css",
-    "static/js/main.7736e93f.js"
+    "static/css/main.3af80828.css",
+    "static/js/main.4bd7ebe5.js"
   ]
 }
