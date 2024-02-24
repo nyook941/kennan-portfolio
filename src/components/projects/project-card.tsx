@@ -24,25 +24,22 @@ export default function ProjectCard({ project }: { project: Project }) {
         />,
         document.body
       )}
-      <div className="Projects-Card-Top">
-        <div className="Projects-Card-Move">
-          <div className="Circle" />
-          <div className="Circle" />
-          <div className="Circle" />
-        </div>
-      </div>
       <img src={project.image}></img>
-      <h1>{project.title}</h1>
-      <p>{project.description}</p>
-      <div className="Skills-Container">
-        {project.skills.map((skill, index) => (
-          <SkillTag
-            skill={skill}
-            backgroundColor="#5c5470"
-            color="white"
-            key={index}
-          />
-        ))}
+      <div className="content">
+        <h1>{project.title}</h1>
+        <div className="description">
+          <p>{project.description}</p>
+          <div className="Skills-Container">
+            {project.skills.map((skill, index) => (
+              <SkillTag
+                skill={skill}
+                backgroundColor="#47455a"
+                color="white"
+                key={index}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

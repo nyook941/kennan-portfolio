@@ -1,6 +1,6 @@
 [
   {
-    "title": "Motherboard Inspector",
+    "title": "AI Motherboard Inspector",
     "image": "/images/motherboard-id/motherboard_id_thumbnail.png",
     "caption": "The UI after a motherboard's defects and ports have been identified.",
     "description": "Winner of the Summer 2023 UTDesign Expo, the motherboard inspector uses AI/ML to automate the identification and diagnoses of faulty motherboards.",
@@ -100,6 +100,53 @@
       "gallery": [""],
       "githubLink": "",
       "video": "/videos/Motherboard Identification.mp4"
+    }
+  },
+
+  {
+    "title": "Quality of Life Technology Labs Chatbot",
+    "image": "/images/qolt-chatbot/qolt-chatbot-thumbnail.png",
+    "caption": "",
+    "description": "Funded by Professor Lakshman Tamil, the Quality of Life Technology Labs (QoLTL) chatbot is a custom chatbot trained to answer any questions about QoLTL and it's research.",
+    "skills": ["React.js", "AWS", "Langchain", "Llama Index"],
+    "moreInfo": {
+      "about": [
+        {
+          "subtitle": "",
+          "content": [
+            {
+              "p": "",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        }
+      ],
+      "techInfo": [
+        {
+          "subtitle": "",
+          "content": [
+            {
+              "p": "",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        }
+      ],
+      "gallery": [""],
+      "githubLink": "",
+      "video": ""
     }
   }
 ]

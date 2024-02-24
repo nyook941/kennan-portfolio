@@ -18,7 +18,7 @@ export default function Chatbot() {
   });
 
   return (
-    <div className="Chatbot">
+    <div className={`Chatbot`}>
       <div className={`Chats-Response-Container ${chatSlideAnimation}`}>
         <p className="Response">
           Hey! I'm a chatbot designed to answer questions about Kennan.

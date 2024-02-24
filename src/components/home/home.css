@@ -1,14 +1,26 @@
 .Home-Container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   height: calc(100vh - 100px);
   gap: 20px;
   padding-top: 100px;
   background-image: url(../../../public/homeBackround.png);
   background-size: cover;
   background-attachment: fixed;
-  justify-items: center;
+}
+
+.Home-Container .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.Home-Container .content.open {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .Description {
@@ -51,7 +63,6 @@
   border-radius: 10px;
   border-color: black;
   height: 70%;
-  /* width: 30%; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -73,19 +84,11 @@
 }
 
 .Social {
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   color: black;
   transition: color 0.3s ease;
-}
-
-.Socials-button {
-  background-color: transparent;
-  margin-right: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
+  padding-right: 20px;
 }
 
 .Social:hover {

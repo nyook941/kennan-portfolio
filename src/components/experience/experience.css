@@ -10,8 +10,9 @@
 
 .Vertical-Timeline {
   background-color: transparent;
-  width: 100vw;
+  width: 100%;
 }
+
 .Skills-Container {
   display: flex;
   flex-direction: row;

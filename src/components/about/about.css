@@ -2,14 +2,27 @@
   min-height: calc(100vh - 190px);
   width: calc(100vw - 120px);
   background: #364851;
+  padding: 60px;
+}
+
+.About-Container .content {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-gap: 60px;
   grid-column-gap: 20%;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
-  padding: 60px;
   padding-top: 100px;
   padding-bottom: 100px;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.About-Container .content.open {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .About-Container h1 {

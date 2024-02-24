@@ -95,10 +95,14 @@ export default function Header({
         >
           Projects
         </button>
-        <button className="Resume">
+        <a
+          className="Resume"
+          href="\Kennan Wu Resume.pdf"
+          download="Kennan_Wu_Resume.pdf"
+        >
           <FaDownload className="Icon-Right" />
           Download Resume
-        </button>
+        </a>
       </div>
     </div>
   );

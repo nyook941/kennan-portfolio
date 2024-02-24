@@ -1,6 +1,7 @@
 {
   "title": "Quality of Life Technology Labs Chatbot",
   "image": "/images/motherboard_id_thumbnail.png",
+  "caption": "The UI after a motherboard's defects and ports have been identified.",
   "description": "Funded by Professor Lakshman Tamil, the Quality of Life Technology Labs (QoLTL) chatbot is a custom chatbot trained to answer any questions about QoLTL and it's research.",
   "skills": ["React.js", "AWS", "Langchain", "Llama Index"],
   "moreInfo": {
@@ -11,12 +12,12 @@
           {
             "p": "The motherboard inspector is a software used to identify and detect issues with faulty motherboards, ie. burn marks, dented ports, spill stains, etc. The software combines a multitude of algorithms and techniques including Optical Character Recognition (OCR), image processing, and Object Detection.",
             "img": [""],
-            "captions": [""]
+            "cap": [""]
           },
           {
             "p": "Built for the UTDesign Capstone—a mandatory project for UTD seniors, sponsored by companies—our project, sponsored by SMS Infocomm, won first place at the Summer 2023 UTDesign Expo. This expo is a semester-end competition where UTDesign Capstone projects are evaluated and ranked by judges.",
-            "img": ["/images/motherboard_id_winjfif.jfif"],
-            "captions": ["The project poster and the UTDesign expo plaque"]
+            "img": ["/images/motherboard-id/motherboard_id_winjfif.jfif"],
+            "cap": ["The project poster and the UTDesign expo plaque"]
           }
         ]
       },
@@ -24,26 +25,79 @@
         "subtitle": "Sponsor",
         "content": [
           {
-            "p": "The software was built for SMS InfoComm, who specializes in fixing faulty motherboards.",
+            "p": "The software was built for SMS InfoComm, who specializes in fixing faulty motherboards. ",
             "img": [""],
-            "captions": [""]
+            "cap": [""]
           }
         ]
       }
     ],
     "techInfo": [
       {
-        "subtitle": "What is it?",
+        "subtitle": "UI Design",
         "content": [
-          "The motherboard inspector is a software used to identify and detect issues with faulty motherboards, ie. burn marks, dented ports, spill stains, etc. The software combines a multitude of algorithms and techniques including Optical Character Recognition (OCR), image processing, and Object Detection.",
-          "Built for the UTDesign Capstone—a mandatory project for UTD seniors, sponsored by companies—our project, sponsored by SMS Infocomm, won first place at the Summer 2023 UTDesign Expo. This expo is a semester-end competition where UTDesign Capstone projects are evaluated and ranked by judges."
-        ],
-        "images": ["", "/images/motherboard_id_winjfif.jfif"],
-        "captions": ["", "The project poster and the UTDesign expo plaque"]
+          {
+            "p": "The software's UI, designed with PyQt5, supports efficient interaction between the front-end and back-end through signals and slots. It features multiple screens, each serving a specific function.",
+            "img": [""],
+            "cap": [""]
+          },
+          {
+            "p": "Users enter station and user IDs for security. They can then capture a motherboard image using a connected camera. Options include motherboard ID, defect detection, and I/O port identification, illustrated below.",
+            "img": ["/images/motherboard-id/motherboard_id_main_page.png"],
+            "cap": ["The main page of the motherboard identification UI"]
+          }
+        ]
+      },
+      {
+        "subtitle": "Object Detection",
+        "content": [
+          {
+            "p": "The software employs YOLOv8 for object detection to analyze motherboards. Training involved Roboflow for dataset annotation and management, optimizing YOLOv8 model performance.",
+            "img": [""],
+            "cap": [""]
+          },
+          {
+            "p": "The ID block, containing the motherboard's unique PPID in text or a 2D matrix barcode, is identified using YOLOv8. The model outputs a cropped image of the block for further analysis (refer to the motherboard identification section).",
+            "img": [""],
+            "cap": [""]
+          },
+          {
+            "p": "YOLOv8 also detects I/O ports, aiding in motherboard identification by matching port configurations to specific models.",
+            "img": [""],
+            "cap": [""]
+          },
+          {
+            "p": "Defects such as burns, liquid spill discolorations, and missing thermal paste are identified using YOLOv8, trained specifically to recognize these issues.",
+            "img": ["/images/motherboard-id/yolov8.png"],
+            "cap": [
+              "USB ports, burns, ID blocks, thermal paste, and discolorations identified by YOLOv8."
+            ]
+          }
+        ]
+      },
+      {
+        "subtitle": "Motherboard Identification",
+        "content": [
+          {
+            "p": "The software identifies motherboards using 2D matrix scanning or OCR. These methods ensure precision in recognition.",
+            "img": [""],
+            "cap": [""]
+          },
+          {
+            "p": "Initially, it scans the motherboard's 2D bar matrix. Image preprocessing involves OpenCV algorithms for gray scaling, gaussian blur, etc. The pylibdmtx library reads the preprocessed image, converting it to a string PPID value. Regex postprocessing checks the PPID format, determining a confidence rating based on scan matches and regex results.",
+            "img": [""],
+            "cap": [""]
+          },
+          {
+            "p": "If barcode scan confidence is below 70%, OCR is used. The software crops the ID block to the PPID, using OpenCV for bounding boxes and contours. Preprocessed images go through OCR with Tesseract by Google. A regex algorithm postprocesses the output, adjusting the confidence rating accordingly.",
+            "img": [""],
+            "cap": [""]
+          }
+        ]
       }
     ],
     "gallery": [""],
     "githubLink": "",
-    "video": ""
+    "video": "/videos/Motherboard Identification.mp4"
   }
 }

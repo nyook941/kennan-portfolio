@@ -16,9 +16,9 @@ const Experience = forwardRef<HTMLDivElement, {}>((props, ref) => {
           <VerticalTimelineElement
             key={index}
             contentStyle={{ background: "#E1EFF6", color: "black" }}
-            contentArrowStyle={{ borderRight: "7px solid  #C9C0FF" }}
+            contentArrowStyle={{ borderRight: "7px solid  #E1EFF6" }}
             date={job.date}
-            iconStyle={{ background: "#C9C0FF", color: "#fff" }}
+            iconStyle={{ background: "#E1EFF6", color: "#fff" }}
             icon={
               <img
                 src={job.imgPath}

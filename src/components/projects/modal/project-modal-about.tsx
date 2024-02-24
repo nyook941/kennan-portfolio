@@ -58,12 +58,12 @@ export default function ProjectsModalAbout({
       }}
     >
       <div className="content">
+        <video src={project.moreInfo.video} controls>
+          {" "}
+          Your browser does not support this video.
+        </video>
         {project.moreInfo.about.map((section, index) => (
           <>
-            <video src={project.moreInfo.video} controls>
-              {" "}
-              Your browser does not support this video.
-            </video>
             <h3 key={index}>{section.subtitle}</h3>
             {section.content.map((content, index) => (
               <p key={index}>

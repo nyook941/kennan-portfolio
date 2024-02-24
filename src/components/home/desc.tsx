@@ -17,7 +17,7 @@ export default function Desc() {
   }, []);
 
   return (
-    <div className={`Description ${showId}`} id="DescriptionDiv">
+    <div className={`Description`} id="DescriptionDiv">
       <div className="">
         <h1>Kennan Wu</h1>
       </div>
@@ -31,12 +31,12 @@ export default function Desc() {
         kennanwu02@gmail.com
       </p>
       <div className="Socials-Container">
-        <button className="Socials-button">
+        <a href="https://github.com/nyook941" target="_blank">
           <FaGithub className="Social" />
-        </button>
-        <button className="Socials-button">
+        </a>
+        <a href="https://www.linkedin.com/in/kennan-wu/" target="_blank">
           <FaLinkedin className="Social" />
-        </button>
+        </a>
       </div>
     </div>
   );
