@@ -71,7 +71,7 @@
 
 .Text-Area {
   justify-self: flex-end;
-  font-size: 24px;
+  font-size: 18px;
   background-color: transparent;
   border: solid;
   border-width: 1px 0 0 0;
@@ -112,7 +112,8 @@
 }
 
 .Chats-Response-Container {
-  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .Chats-Response-Container.slide-up-enter {
