@@ -4,7 +4,7 @@
     "image": "/images/motherboard-id/motherboard_id_thumbnail.png",
     "caption": "The UI after a motherboard's defects and ports have been identified.",
     "description": "Winner of the Summer 2023 UTDesign Expo, the motherboard inspector uses AI/ML to automate the identification and diagnoses of faulty motherboards.",
-    "skills": ["Tesseract OCR", "OpenCV", "YOLOv8"],
+    "skills": ["Tesseract OCR", "OpenCV", "YOLOv8", "Python"],
     "moreInfo": {
       "about": [
         {
@@ -105,22 +105,34 @@
 
   {
     "title": "Quality of Life Technology Labs Chatbot",
-    "image": "/images/qolt-chatbot/qolt-chatbot-thumbnail.png",
-    "caption": "",
+    "image": "/images/qolt-chatbot/thumbnail.png",
+    "caption": "The welcome page of the chatbot.",
     "description": "Funded by Professor Lakshman Tamil, the Quality of Life Technology Labs (QoLTL) chatbot is a custom chatbot trained to answer any questions about QoLTL and it's research.",
-    "skills": ["React.js", "AWS", "Langchain", "Llama Index"],
+    "skills": [
+      "React.js",
+      "AWS",
+      "Langchain",
+      "Llama Index",
+      "Docker",
+      "PostgreSQL"
+    ],
     "moreInfo": {
       "about": [
         {
-          "subtitle": "",
+          "subtitle": "Use Case",
           "content": [
             {
-              "p": "",
+              "p": "The chatbot is intended for those interested in the Quality of Life Technologies Lab (QoLT). It offers insights into the lab's projects and its founder, Professor Tamil. The chatbot contains a custom knowledge base uploader, where the professor can upload new and more relevant information about the lab, and the chatbot will immediatley be able to discuss this new information.",
               "img": [""],
               "cap": [""]
-            },
+            }
+          ]
+        },
+        {
+          "subtitle": "Quality of Life Technologies Labs",
+          "content": [
             {
-              "p": "",
+              "p": "From the [QoLT lab website](https://ecs.utdallas.edu/research/researchlabs/QoLT/index.html) itself: \"Quality of Life Technology Laboratory’s mission is to explore technological advancements, to develop innovative methods, and to design intelligent systems for personalized health care, vital signs monitoring and disease prevention. Teaching and training students to become creative professionals in engineering innovations for health care field is an integral part of our strategy. We foster methodologies, which in collaboration with other educational, research, medical, and industrial institutions, will lead to commercial products for public use.\"",
               "img": [""],
               "cap": [""]
             }
@@ -129,15 +141,110 @@
       ],
       "techInfo": [
         {
-          "subtitle": "",
+          "subtitle": "Chatbot Functionalities",
           "content": [
             {
-              "p": "",
+              "p": "This section explores the chatbot's key features, including its core functionality, voice interaction, custom knowledge base integration, and user authentication system, detailing the technical processes and architectures underlying each.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        },
+        {
+          "subtitle": "The Chatbot",
+          "content": [
+            {
+              "p": "The chatbot utilizes an OpenAI API key to facilitate text-based interactions with the GPT 3.5 Turbo model. This offers a straightforward approach to implementing a text-to-text model. For enhanced information retrieval, it integrates a retrieval-augmented generation (RAG) system, allowing the chatbot to access a custom knowledge base.",
+              "img": [
+                "/images/qolt-chatbot/text-to-text.gif",
+                "/images/qolt-chatbot/qolt-chatbot-thumbnail.png"
+              ],
+              "cap": [
+                "A text-to-text interaction with the chatbot. The user asks: \"Who is professor Tamil\" and the chatbot responds accordingly.",
+                "The page to interact with the chatbot"
+              ]
+            },
+            {
+              "p": "The system employs Langchain to transform uploaded documents into actionable data, enhancing the chatbot's information delivery capabilities. This process involves two key steps: Langchain's CharacterTextSplitter segments documents into manageable sections, and an embedding process translates these segments into numerical vectors (capturing their meaning) using a small LLM called all-MiniLM-L6-v2. These vectors are stored in ChromaDB for efficient query handling.",
               "img": [""],
               "cap": [""]
             },
             {
-              "p": "",
+              "p": "Once setup is complete, users can query the chatbot. Langchain's QA_CHAIN_PROMPT ensures contextually aware responses, providing accurate and relevant answers.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        },
+        {
+          "subtitle": "Voice Based Interaction",
+          "content": [
+            {
+              "p": "To enable voice interaction, the chatbot uses AWS Transcribe to convert an MP3 voice file into text.",
+              "img": ["/images/qolt-chatbot/voice-to-text.gif"],
+              "cap": [
+                "A voice interaction with the chatbot. The user asks into the mic \"What is the quality of life technologies lab\", which gets converted to text and the chatbot responds accordingly."
+              ]
+            },
+            {
+              "p": "Here's how it works: a websocket connection (via AWS API Gateway) is established between the app frontend and backend. The user records their voice, which is saved as an MP3 blob and sent over the websocket to an AWS Lambda function. The Lambda converts the blob to MP3, uploads it to S3, and initiates an AWS Transcribe job. EventBridge monitors the job and triggers another Lambda (Using SNS) to retrieve the transcribed text from S3 and send it back to the frontend via the websocket. Finally, the transcribed question is sent to the chatbot as if it were regular text.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        },
+        {
+          "subtitle": "Adding a Custom Knowledgebase",
+          "content": [
+            {
+              "p": "Admin users can enrich the chatbot's knowledge by uploading a custom knowledge base, enabling the lab members to update the chatbot with new advances made in the QoLT lab. This feature supports the chatbot's growth and adaptability to new information.",
+              "img": ["/images/qolt-chatbot/knowledge-base-uploading.gif"],
+              "cap": [
+                "The user uploads a .txt file that says information on a person named \"bobe\". The user then asks the chatbot information about bobe, and it is able to answer."
+              ]
+            },
+            {
+              "p": "The process is straightforward: within the chatbot's side panel, an 'upload knowledge base' section is provided. Users are prompted to upload files, either by drag-and-drop or through file navigation, accepting .txt or .pdf formats. Through API Gateway, the selected file is sent as a blob to a Lambda function, which then processes and stores it in an S3 bucket. Consequently, as users pose new questions, the chatbot dynamically retrieves and incorporates this uploaded information from the S3 bucket to generate informed responses.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        },
+        {
+          "subtitle": "User Authentication",
+          "content": [
+            {
+              "p": "The webapp incorporates a login/signup feature to distinguish admin users, utilizing a PostgreSQL database hosted on Amazon RDS for user management. During account creation or login, passwords are encrypted with bcrypt and securely transmitted to Lambda functions via API Gateway for storage or authentication against the RDS database. Additionally, the signup process enforces input validation criteria: users must provide a valid email address not previously registered, create a password with a minimum of 8 characters, and ensure password entries match.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        },
+        {
+          "subtitle": "Adding a Custom Knowledgebase",
+          "content": [
+            {
+              "p": "Admin users can enrich the chatbot's knowledge by uploading a custom knowledge base, enabling the lab members to update the chatbot with new advances made in the QoLT lab. This feature supports the chatbot's growth and adaptability to new information.",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "The process is straightforward: within the chatbot's side panel, an 'upload knowledge base' section is provided. Users are prompted to upload files, either by drag-and-drop or through file navigation, accepting .txt or .pdf formats. Through API Gateway, the selected file is sent as a blob to a Lambda function, which then processes and stores it in an S3 bucket. Consequently, as users pose new questions, the chatbot dynamically retrieves and incorporates this uploaded information from the S3 bucket to generate informed responses.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        },
+        {
+          "subtitle": "Getting a Cloud-Hosted Backend",
+          "content": [
+            {
+              "p": "One of the foremost challenges was minimizing costs, rendering the option of hosting a dedicated server for our backend infeasible. To address this, we leveraged Lambda's \"serverless\" architecture, which allows code to execute in response to events without the need for a full-fledged server. This approach significantly reduced our operational overhead.",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "Hosting the retrieval-augmented generation (RAG) system on Lambda posed a hurdle due to Lambda's 500MB code size limit, including lambda layers. Fortunately, Lambda's support for attaching Docker containers via AWS ECR provided a workaround. By packaging the chatbot's backend into a Docker container, we achieved lower costs and eliminated server management tasks. However, this setup introduces latency during cold starts as the lambda function initializes a runtime environment from the container image, a challenge we are actively exploring solutions for.",
               "img": [""],
               "cap": [""]
             }
@@ -146,7 +253,7 @@
       ],
       "gallery": [""],
       "githubLink": "",
-      "video": ""
+      "video": "/videos/Chatbot-website-demo.mp4"
     }
   }
 ]

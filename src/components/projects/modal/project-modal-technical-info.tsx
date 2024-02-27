@@ -76,7 +76,10 @@ export default function ProjectsModalTech({
                   <>
                     {img !== "" && (
                       <div className="img-container">
-                        <img src={img} key={index}></img>
+                        <img
+                          src={process.env.PUBLIC_URL + img}
+                          key={index}
+                        ></img>
                         <p className="caption">{content.cap[index]}</p>
                       </div>
                     )}

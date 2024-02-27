@@ -37,6 +37,26 @@ export default function ProjectsModalAbout({
     }
   }, [isOpen]);
 
+  const parseLinks = (text: string) => {
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    const parts = text.split(linkRegex);
+    return parts
+      .map((part, index) => {
+        if (index % 3 === 0) {
+          return part;
+        } else if (index % 3 === 1) {
+          const url = parts[index + 1];
+          return (
+            <a href={url} key={index} target="_blank" rel="noopener noreferrer">
+              {part}
+            </a>
+          );
+        }
+        return null;
+      })
+      .filter(Boolean);
+  };
+
   const isHover = hovered === "about";
   const isSelected = section === "about";
 
@@ -58,7 +78,7 @@ export default function ProjectsModalAbout({
       }}
     >
       <div className="content">
-        <video src={project.moreInfo.video} controls>
+        <video src={process.env.PUBLIC_URL + project.moreInfo.video} controls>
           {" "}
           Your browser does not support this video.
         </video>
@@ -67,13 +87,16 @@ export default function ProjectsModalAbout({
             <h3 key={index}>{section.subtitle}</h3>
             {section.content.map((content, index) => (
               <p key={index}>
-                {content.p}
+                {parseLinks(content.p)}
                 <br />
                 {content.img.map((img, index) => (
                   <>
                     {img !== "" && (
                       <div className="img-container">
-                        <img src={img} key={index}></img>
+                        <img
+                          src={process.env.PUBLIC_URL + img}
+                          key={index}
+                        ></img>
                         <p className="caption">{content.cap[index]}</p>
                       </div>
                     )}

@@ -66,13 +66,17 @@ export default function ProjectsModalGallery({
       }}
     >
       <div className="content">
-        <video src={project.moreInfo.video} controls>
+        <video src={process.env.PUBLIC_URL + project.moreInfo.video} controls>
           {" "}
           Your browser does not support this video.
         </video>
         {images.map((image, index) => (
           <div className="img-container">
-            <img className="gallery-img" src={image} key={index}></img>
+            <img
+              className="gallery-img"
+              src={process.env.PUBLIC_URL + image}
+              key={index}
+            ></img>
             <p className="caption">{captions[index]}</p>
           </div>
         ))}

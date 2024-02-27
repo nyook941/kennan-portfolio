@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import SkillTag from "../skill-tag/skill-tag";
 import ProjectsModal from "./project-more-info";
 import "./projects.css";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Project from "../../models/project";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -24,7 +24,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         />,
         document.body
       )}
-      <img src={project.image}></img>
+      <img src={process.env.PUBLIC_URL + project.image}></img>
       <div className="content">
         <h1>{project.title}</h1>
         <div className="description">

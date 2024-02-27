@@ -21,7 +21,7 @@ const Experience = forwardRef<HTMLDivElement, {}>((props, ref) => {
             iconStyle={{ background: "#E1EFF6", color: "#fff" }}
             icon={
               <img
-                src={job.imgPath}
+                src={process.env.PUBLIC_URL + job.imgPath}
                 className="Experience-Icon"
                 alt="Company Logo"
               />
