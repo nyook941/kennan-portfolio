@@ -109,11 +109,25 @@
   border-width: 1px;
   padding: 10px 15px 10px 15px;
   max-width: 80%;
+  align-self: flex-start;
+}
+
+.Request {
+  display: inline-block;
+  background-color: rgba(219, 244, 255, 0.4);
+  margin: 15px 0 0 20px;
+  border-radius: 10px 10px 10px 0;
+  border: solid;
+  border-width: 1px;
+  padding: 10px 15px 10px 15px;
+  max-width: 80%;
+  align-self: flex-end;
 }
 
 .Chats-Response-Container {
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .Chats-Response-Container.slide-up-enter {

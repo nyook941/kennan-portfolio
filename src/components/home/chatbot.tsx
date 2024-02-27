@@ -40,7 +40,7 @@ export default function Chatbot() {
           I help you today?
         </p>
         {chains.map((chain, index) => (
-          <p className="Response">{chain.request}</p>
+          <p className="Request">{chain.request}</p>
         ))}
       </div>
       <textarea
