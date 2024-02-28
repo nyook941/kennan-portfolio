@@ -220,21 +220,7 @@
             }
           ]
         },
-        {
-          "subtitle": "Adding a Custom Knowledgebase",
-          "content": [
-            {
-              "p": "Admin users can enrich the chatbot's knowledge by uploading a custom knowledge base, enabling the lab members to update the chatbot with new advances made in the QoLT lab. This feature supports the chatbot's growth and adaptability to new information.",
-              "img": [""],
-              "cap": [""]
-            },
-            {
-              "p": "The process is straightforward: within the chatbot's side panel, an 'upload knowledge base' section is provided. Users are prompted to upload files, either by drag-and-drop or through file navigation, accepting .txt or .pdf formats. Through API Gateway, the selected file is sent as a blob to a Lambda function, which then processes and stores it in an S3 bucket. Consequently, as users pose new questions, the chatbot dynamically retrieves and incorporates this uploaded information from the S3 bucket to generate informed responses.",
-              "img": [""],
-              "cap": [""]
-            }
-          ]
-        },
+
         {
           "subtitle": "Getting a Cloud-Hosted Backend",
           "content": [
@@ -244,7 +230,7 @@
               "cap": [""]
             },
             {
-              "p": "Hosting the retrieval-augmented generation (RAG) system on Lambda posed a hurdle due to Lambda's 500MB code size limit, including lambda layers. Fortunately, Lambda's support for attaching Docker containers via AWS ECR provided a workaround. By packaging the chatbot's backend into a Docker container, we achieved lower costs and eliminated server management tasks. However, this setup introduces latency during cold starts as the lambda function initializes a runtime environment from the container image, a challenge we are actively exploring solutions for.",
+              "p": "Hosting the retrieval-augmented generation (RAG) system on Lambda posed a hurdle due to Lambda's 500MB code size limit, including lambda layers. Fortunately, Lambda's support for attaching Docker containers via AWS ECR provided a workaround. By packaging the chatbot's backend into a Docker container, a lower cost and elimination of the need for server management was acheived. However, this setup introduces latency during cold starts as the lambda function initializes a runtime environment from the container image, a challenge we are actively exploring solutions for.",
               "img": [""],
               "cap": [""]
             }

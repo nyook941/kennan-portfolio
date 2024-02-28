@@ -179,9 +179,9 @@
 
 .Projects-Modal img {
   width: 100%;
-  max-height: 90%;
+  max-height: 700px;
   border-radius: 10px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .Projects-Modal .gallery-img {
