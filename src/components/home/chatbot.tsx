@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./home.css";
 import Chain from "../../models/chatbot-chain";
+import ChatElement from "./chat-element";
 
 export default function Chatbot() {
   const [text, setText] = useState("");
@@ -12,12 +13,14 @@ export default function Chatbot() {
       isCompleted: true,
     },
   ]);
-  const [chatSlideAnimation, setChatSlideAnimation] =
-    useState("slide-up-enter");
 
+  const chatsContainerRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    setChatSlideAnimation("slide-up-enter-active");
-  }, []);
+    if (chatsContainerRef.current) {
+      const { scrollHeight, clientHeight } = chatsContainerRef.current;
+      chatsContainerRef.current.scrollTop = scrollHeight - clientHeight;
+    }
+  }, [chains]);
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const textArea = e.target;
@@ -81,23 +84,9 @@ export default function Chatbot() {
 
   return (
     <div className={`Chatbot`}>
-      <div className={`Chats-Container`}>
+      <div ref={chatsContainerRef} className={`Chats-Container`}>
         {chains.map((chain, index) => (
-          <>
-            {chain.request !== "" && (
-              <p className={`Request ${chatSlideAnimation}`}>{chain.request}</p>
-            )}
-            {!chain.isCompleted ? (
-              <img
-                src={`${process.env.PUBLIC_URL}/loading.gif`}
-                className={`Response Loading ${chatSlideAnimation}`}
-              ></img>
-            ) : (
-              <p className={`Response ${chatSlideAnimation}`}>
-                {chain.response}
-              </p>
-            )}
-          </>
+          <ChatElement chain={chain} key={index} />
         ))}
       </div>
       <textarea
