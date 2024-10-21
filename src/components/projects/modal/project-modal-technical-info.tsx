@@ -57,38 +57,38 @@ export default function ProjectsModalTech({
     <div
       className={className}
       onClick={handleModalClick}
-      onMouseEnter={() => {
-        onHover();
-      }}
-      onMouseLeave={() => {
-        onMouseLeave();
-      }}
+      onMouseEnter={onHover}
+      onMouseLeave={onMouseLeave}
     >
       <div className="content">
-        {project.moreInfo.techInfo.map((section, index) => (
+        {project.moreInfo.techInfo && project.moreInfo.techInfo.length > 0 && (
           <>
-            <h3 key={index}>{section.subtitle}</h3>
-            {section.content.map((content, index) => (
-              <p key={index}>
-                {content.p}
-                <br />
-                {content.img.map((img, index) => (
-                  <>
-                    {img !== "" && (
-                      <div className="img-container">
-                        <img
-                          src={process.env.PUBLIC_URL + img}
-                          key={index}
-                        ></img>
-                        <p className="caption">{content.cap[index]}</p>
-                      </div>
-                    )}
-                  </>
+            {project.moreInfo.techInfo.map((section, index) => (
+              <div key={index}>
+                <h3>{section.subtitle}</h3>
+                {section.content.map((content, contentIndex) => (
+                  <div key={contentIndex}>
+                    <p>{content.p}</p>
+                    {content.img &&
+                      content.img.map(
+                        (img, imgIndex) =>
+                          img && (
+                            <div className="img-container" key={imgIndex}>
+                              <img src={process.env.PUBLIC_URL + img} alt="" />
+                              {content.cap && content.cap[imgIndex] && (
+                                <p className="caption">
+                                  {content.cap[imgIndex]}
+                                </p>
+                              )}
+                            </div>
+                          )
+                      )}
+                  </div>
                 ))}
-              </p>
+              </div>
             ))}
           </>
-        ))}
+        )}
       </div>
       <h1 className={isHover ? "shown" : ""}>TECHNICAL INFO</h1>
     </div>

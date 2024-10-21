@@ -13,6 +13,7 @@ interface MoreInfo {
   gallery: string[];
   githubLink: string;
   video: string;
+  website: string;
 }
 
 interface Section {

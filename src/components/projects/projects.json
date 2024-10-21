@@ -99,6 +99,7 @@
       ],
       "gallery": [""],
       "githubLink": "",
+      "website": "",
       "video": "/videos/Motherboard Identification.mp4"
     }
   },
@@ -238,7 +239,50 @@
         }
       ],
       "gallery": [""],
-      "githubLink": "",
+      "githubLink": "https://github.com/nyook941/qolt-RAG-chatbot",
+      "video": "/videos/Chatbot-website-demo.mp4",
+      "website": "https://qoltbot.netlify.app/"
+    }
+  },
+  {
+    "title": "Neural Network Framework",
+    "image": "/images/nn/nn.png",
+    "caption": "The welcome page of the chatbot.",
+    "description": "A simple framework created from bare Python and Numpy that allows users to create neural networks of any size.",
+    "skills": ["Python", "Numpy"],
+    "moreInfo": {
+      "about": [
+        {
+          "subtitle": "Overview",
+          "content": [
+            {
+              "p": "The primary goal of this project was to teach myself how neural networks work where to use them. After watching a [deeply educational video series](https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi), I was able to code out the neural network framework without other external resources with bare Python and Numpy.",
+              "img": [""],
+              "cap": [""]
+            },
+            {
+              "p": "Users are able to create neural networks of different sizes by importing the library into their own python code, much like Tensorflow. The project comes complete with a forward pass algorithm, which calculates the outputs given the inputs to the network, and a backporpogation algorithm, which is used during training to modify the parameters of the neural networks.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        }
+      ],
+      "techInfo": [
+        {
+          "subtitle": "Initialization",
+          "content": [
+            {
+              "p": "This section explores the chatbot's key features, including its core functionality, voice interaction, custom knowledge base integration, and user authentication system, detailing the technical processes and architectures underlying each.",
+              "img": [""],
+              "cap": [""]
+            }
+          ]
+        }
+      ],
+      "gallery": [""],
+      "githubLink": "https://github.com/nyook941/neural-network",
+      "website": "",
       "video": "/videos/Chatbot-website-demo.mp4"
     }
   }

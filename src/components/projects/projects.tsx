@@ -7,10 +7,11 @@ const Projects = forwardRef<HTMLDivElement, {}>((props, ref) => {
   return (
     <div className="Projects-Container" ref={ref}>
       <h1>Projects</h1>
-
-      {projects.map((project, index) => (
-        <ProjectCard project={project} key={index} />
-      ))}
+      <div className="Card-Container">
+        {projects.map((project, index) => (
+          <ProjectCard project={project} key={index} />
+        ))}
+      </div>
     </div>
   );
 });

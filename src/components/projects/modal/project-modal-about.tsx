@@ -70,42 +70,61 @@ export default function ProjectsModalAbout({
     <div
       className={className}
       onClick={handleModalClick}
-      onMouseEnter={() => {
-        onHover();
-      }}
-      onMouseLeave={() => {
-        onMouseLeave();
-      }}
+      onMouseEnter={onHover}
+      onMouseLeave={onMouseLeave}
     >
       <div className="content">
-        <video src={process.env.PUBLIC_URL + project.moreInfo.video} controls>
-          {" "}
-          Your browser does not support this video.
-        </video>
-        {project.moreInfo.about.map((section, index) => (
+        {project.moreInfo.about && project.moreInfo.about.length > 0 && (
           <>
-            <h3 key={index}>{section.subtitle}</h3>
-            {section.content.map((content, index) => (
-              <p key={index}>
-                {parseLinks(content.p)}
-                <br />
-                {content.img.map((img, index) => (
-                  <>
-                    {img !== "" && (
-                      <div className="img-container">
-                        <img
-                          src={process.env.PUBLIC_URL + img}
-                          key={index}
-                        ></img>
-                        <p className="caption">{content.cap[index]}</p>
-                      </div>
-                    )}
-                  </>
+            {project.moreInfo.about.map((section, index) => (
+              <div key={index}>
+                <h3>{section.subtitle}</h3>
+                {section.content.map((content, contentIndex) => (
+                  <div key={contentIndex}>
+                    <p>{parseLinks(content.p)}</p>
+                    {content.img &&
+                      content.img.map(
+                        (img, imgIndex) =>
+                          img && (
+                            <div className="img-container" key={imgIndex}>
+                              <img src={process.env.PUBLIC_URL + img} alt="" />
+                              {content.cap && content.cap[imgIndex] && (
+                                <p className="caption">
+                                  {content.cap[imgIndex]}
+                                </p>
+                              )}
+                            </div>
+                          )
+                      )}
+                  </div>
                 ))}
-              </p>
+              </div>
             ))}
           </>
-        ))}
+        )}
+
+        <div className="buttons">
+          {project.moreInfo.githubLink && (
+            <a
+              href={project.moreInfo.githubLink}
+              className="button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          )}
+          {project.moreInfo.website && project.moreInfo.website !== "" && (
+            <a
+              href={project.moreInfo.website}
+              className="button"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Website
+            </a>
+          )}
+        </div>
       </div>
       <h1 className={isHover ? "shown" : ""}>ABOUT</h1>
     </div>

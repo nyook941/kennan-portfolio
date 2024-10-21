@@ -2,7 +2,7 @@ import { createPortal } from "react-dom";
 import SkillTag from "../skill-tag/skill-tag";
 import ProjectsModal from "./project-more-info";
 import "./projects.css";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import Project from "../../models/project";
 
 export default function ProjectCard({ project }: { project: Project }) {
