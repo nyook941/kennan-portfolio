@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import "./App.css";
+import content from "./content.json";
 import About from "./components/about/about";
 import Experience from "./components/experience/experience";
 import Header from "./components/header/header";
@@ -20,8 +21,8 @@ function App() {
         experienceRef={experienceRef}
         projectsRef={projectsRef}
       />
-      <Home ref={homeRef} />
-      <About ref={aboutRef} />
+      <Home ref={homeRef} content={content.home} />
+      <About ref={aboutRef} content={content.about} />
       <Experience ref={experienceRef} />
       <Projects ref={projectsRef} />
     </div>

@@ -62,8 +62,6 @@ export default function Header({
       : ""
   }`;
 
-  console.log(containerClassName);
-
   return (
     <div className={containerClassName}>
       <div className="Name">

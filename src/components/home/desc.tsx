@@ -2,33 +2,31 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import "./home.css";
 import { useEffect, useState } from "react";
 
-export default function Desc() {
+export default function Desc({ content }: { content: any }) {
   const [showId, setShowId] = useState<string>("hideId");
   let element = document.getElementById("DescriptionDiv");
   useEffect(() => {
     element?.addEventListener("mouseover", function (event) {
       setShowId("showId");
-      console.log("showId");
     });
     element?.addEventListener("mouseleave", function (event) {
       setShowId("hideId");
-      console.log("hideId");
     });
   }, []);
 
   return (
     <div className={`Description`} id="DescriptionDiv">
-      <div className="">
+      <div>
         <h1>Kennan Wu</h1>
       </div>
       <p>
-        M.S. in Computer Engineering
+        {content.education}
         <br />
-        Software Engineer
+        {content.position}
         <br />
-        Dallas, Texas
+        {content.location}
         <br />
-        kennanwu02@gmail.com
+        {content.email}
       </p>
       <div className="Socials-Container">
         <a href="https://github.com/nyook941" target="_blank">

@@ -1,9 +1,10 @@
 .Experience-Container {
   min-height: calc(100vh - 120px);
   width: calc(100vw - 60px);
-  display: grid;
+  display: flex;
+  flex-direction: column;
   padding: 60px 30px 60px 30px;
-  background-image: url(../../../public/images/experience_background.png);
+  background-image: url(../../../public/images/experience_background.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -36,4 +37,17 @@
   height: 94%;
   margin: 3% 3% 3% 3%;
   border-radius: 50%;
+}
+
+.vertical-timeline-element-subtitle {
+  font-weight: 400 !important;
+}
+
+.vertical-timeline-element-paragraph {
+  font-weight: 400 !important;
+}
+
+.vertical-timeline-element {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
 }

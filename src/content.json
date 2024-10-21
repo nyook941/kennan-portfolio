@@ -1,0 +1,51 @@
+{
+  "home": {
+    "education": "M.S. in Computer Engineering: Applied Machine Learning",
+    "position": "Software Engineer",
+    "location": "Austin, Texas",
+    "email": "kennanwu02@gmail.com"
+  },
+  "about": {
+    "description": "I am a graduate student at the University of Texas at Dallas majoring in computer engineering. I’ve had the privilege of working for a startup and a healthcare IT company, teaching me much about the cloud, and software engineering in general.\n\nMy main focus is learning and building products and projects utilizing the latest technologies, and furthering my skills as a developer and software engineer.",
+    "skills": [
+      {
+        "title": "Tools and Technologies",
+        "skills": [
+          "Git",
+          "AWS",
+          "Azure DevOps",
+          "Docker",
+          "Postman",
+          "PostgreSQL",
+          "JIRA"
+        ]
+      },
+      {
+        "title": "Languages",
+        "skills": [
+          "Java",
+          "Javascript",
+          "Typescript",
+          "Python",
+          "C#",
+          "C/C++",
+          "SQL"
+        ]
+      },
+      {
+        "title": "Frameworks and Libraries",
+        "skills": [
+          "Angular",
+          "React",
+          "React Native",
+          "Node.js",
+          "Express.js",
+          "Ionic",
+          "NumPy",
+          "FastAPI",
+          "GraphQL"
+        ]
+      }
+    ]
+  }
+}

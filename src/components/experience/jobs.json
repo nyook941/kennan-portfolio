@@ -1,0 +1,42 @@
+[
+  {
+    "date": "May 2023 - August 2023",
+    "company": "Rhapsody Health",
+    "position": "Software Engineer Intern",
+    "skills": ["ASP.NET Core", "AWS", "DevOps"],
+    "location": "Frisco, TX",
+    "description": "Improved the product update process by developing an API that optimizes customer data handling",
+    "logo": "/images/rhapsody_logo.png",
+    "color": "rgba(23, 125, 234, 0.2)"
+  },
+  {
+    "date": "August 2022 - March 2024",
+    "company": "Hidden Gems",
+    "position": "Full Stack Developer",
+    "skills": ["React Native", "AWS", "DynamoDB"],
+    "location": "Richardson, TX",
+    "description": "Developed a TypeScript React Native restaurant mobile app that allows users to find locally owned restaurants",
+    "logo": "/images/hiddengems_restuarants_logo.jfif",
+    "color": "rgba(52, 151, 47, 0.2)"
+  },
+  {
+    "date": "January 2024 - May 2024",
+    "company": "Quality of life Technology Labs at UTD",
+    "position": "Undergraduate Research Assistant",
+    "skills": ["React.js", "Langchain", "FastAPI", "PostgreSQL"],
+    "location": "Richardson, TX",
+    "description": "Worked on a custom voice input based chatbot to help people with anxiety",
+    "logo": "/images/UTD_logo.jpg",
+    "color": "rgba(246, 109, 29, 0.2)"
+  },
+  {
+    "date": "June 2024 - August 2024",
+    "company": "Credera",
+    "position": "Technology Consultant Intern",
+    "skills": ["Angular", "Tailwind", "Express.js", "GraphQL"],
+    "location": "Addison, TX",
+    "description": "Rebuilt the account settings page for one of the largest fast-food chains in the US for over 1 million users",
+    "logo": "/images/credera_logo.jpg",
+    "color": "rgba(230, 95, 76, 0.2)"
+  }
+]
